@@ -1,0 +1,320 @@
+{
+  "lastUpdated": "2025-12-22",
+  "benchmarkInfo": {
+    "name": "Humanity's Last Exam",
+    "description": "A benchmark of 3,000 questions across academic disciplines from 500+ subject experts",
+    "source": "https://artificialanalysis.ai/evaluations/humanitys-last-exam",
+    "startDate": "2024-10-01"
+  },
+  "historicalBestScores": [
+    { "date": "2024-10-01", "score": 4.08, "model": "Claude 3.5 Sonnet", "provider": "Anthropic" },
+    { "date": "2024-11-01", "score": 4.08, "model": "Claude 3.5 Sonnet", "provider": "Anthropic" },
+    { "date": "2024-12-01", "score": 7.96, "model": "o1", "provider": "OpenAI" },
+    { "date": "2025-01-01", "score": 7.96, "model": "o1", "provider": "OpenAI" },
+    { "date": "2025-02-01", "score": 8.12, "model": "o1 Pro", "provider": "OpenAI" },
+    { "date": "2025-03-01", "score": 18.16, "model": "Gemini 2.5 Pro Experimental", "provider": "Google" },
+    { "date": "2025-04-01", "score": 20.32, "model": "o3 (high)", "provider": "OpenAI" },
+    { "date": "2025-08-07", "score": 25.32, "model": "gpt-5-2025-08-07", "provider": "OpenAI" },
+    { "date": "2025-10-06", "score": 31.64, "model": "gpt-5-pro-2025-10-06", "provider": "OpenAI" },
+    { "date": "2025-12-20", "score": 37.52, "model": "gemini-3-pro-preview", "provider": "Google" }
+  ],
+  "scores": [
+    {
+      "date": "2024-10-01",
+      "models": [
+        { "name": "Claude 3.5 Sonnet", "score": 4.08, "provider": "Anthropic" }
+      ],
+      "bestScore": 4.08,
+      "bestModel": "Claude 3.5 Sonnet"
+    },
+    {
+      "date": "2024-11-01",
+      "models": [
+        { "name": "Claude 3.5 Sonnet", "score": 4.08, "provider": "Anthropic" },
+        { "name": "GPT-4o", "score": 2.72, "provider": "OpenAI" }
+      ],
+      "bestScore": 4.08,
+      "bestModel": "Claude 3.5 Sonnet"
+    },
+    {
+      "date": "2024-12-01",
+      "models": [
+        { "name": "o1", "score": 7.96, "provider": "OpenAI" },
+        { "name": "Claude 3.5 Sonnet", "score": 4.08, "provider": "Anthropic" },
+        { "name": "GPT-4o", "score": 2.72, "provider": "OpenAI" }
+      ],
+      "bestScore": 7.96,
+      "bestModel": "o1"
+    },
+    {
+      "date": "2025-01-01",
+      "models": [
+        { "name": "o1", "score": 7.96, "provider": "OpenAI" },
+        { "name": "Gemini 2.0 Flash Thinking", "score": 6.56, "provider": "Google" },
+        { "name": "Gemini-1.5-Pro-002", "score": 4.60, "provider": "Google" },
+        { "name": "Claude 3.5 Sonnet", "score": 4.08, "provider": "Anthropic" },
+        { "name": "GPT-4o", "score": 2.72, "provider": "OpenAI" }
+      ],
+      "bestScore": 7.96,
+      "bestModel": "o1"
+    },
+    {
+      "date": "2025-02-01",
+      "models": [
+        { "name": "o1 Pro", "score": 8.12, "provider": "OpenAI" },
+        { "name": "Claude 3.7 Sonnet (Thinking)", "score": 8.04, "provider": "Anthropic" },
+        { "name": "o1", "score": 7.96, "provider": "OpenAI" },
+        { "name": "Gemini 2.0 Flash Thinking", "score": 6.56, "provider": "Google" },
+        { "name": "Gemini-1.5-Pro-002", "score": 4.60, "provider": "Google" },
+        { "name": "Claude 3.5 Sonnet", "score": 4.08, "provider": "Anthropic" },
+        { "name": "GPT-4o", "score": 2.72, "provider": "OpenAI" }
+      ],
+      "bestScore": 8.12,
+      "bestModel": "o1 Pro"
+    },
+    {
+      "date": "2025-03-01",
+      "models": [
+        { "name": "Gemini 2.5 Pro Experimental", "score": 18.16, "provider": "Google" },
+        { "name": "o1 Pro", "score": 8.12, "provider": "OpenAI" },
+        { "name": "Claude 3.7 Sonnet (Thinking)", "score": 8.04, "provider": "Anthropic" },
+        { "name": "o1", "score": 7.96, "provider": "OpenAI" },
+        { "name": "Gemini 2.0 Flash Thinking", "score": 6.56, "provider": "Google" },
+        { "name": "Gemini-1.5-Pro-002", "score": 4.60, "provider": "Google" },
+        { "name": "Claude 3.5 Sonnet", "score": 4.08, "provider": "Anthropic" },
+        { "name": "GPT-4o", "score": 2.72, "provider": "OpenAI" }
+      ],
+      "bestScore": 18.16,
+      "bestModel": "Gemini 2.5 Pro Experimental"
+    },
+    {
+      "date": "2025-04-01",
+      "models": [
+        { "name": "o3 (high)", "score": 20.32, "provider": "OpenAI" },
+        { "name": "o3 (medium)", "score": 19.20, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Experimental", "score": 18.16, "provider": "Google" },
+        { "name": "o4-mini (high)", "score": 18.08, "provider": "OpenAI" },
+        { "name": "o4-mini (medium)", "score": 14.28, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Flash", "score": 10.96, "provider": "Google" },
+        { "name": "o1 Pro", "score": 8.12, "provider": "OpenAI" },
+        { "name": "Claude 3.7 Sonnet (Thinking)", "score": 8.04, "provider": "Anthropic" },
+        { "name": "o1", "score": 7.96, "provider": "OpenAI" },
+        { "name": "Gemini 2.0 Flash Thinking", "score": 6.56, "provider": "Google" },
+        { "name": "Gemini-1.5-Pro-002", "score": 4.60, "provider": "Google" },
+        { "name": "Claude 3.5 Sonnet", "score": 4.08, "provider": "Anthropic" },
+        { "name": "GPT-4o", "score": 2.72, "provider": "OpenAI" }
+      ],
+      "bestScore": 20.32,
+      "bestModel": "o3 (high)"
+    },
+    {
+      "date": "2025-05-06",
+      "models": [
+        { "name": "o3 (high)", "score": 20.32, "provider": "OpenAI" },
+        { "name": "o3 (medium)", "score": 19.20, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Experimental", "score": 18.16, "provider": "Google" },
+        { "name": "o4-mini (high)", "score": 18.08, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Preview", "score": 17.80, "provider": "Google" },
+        { "name": "o4-mini (medium)", "score": 14.28, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Flash", "score": 10.96, "provider": "Google" },
+        { "name": "o1 Pro", "score": 8.12, "provider": "OpenAI" },
+        { "name": "Claude 3.7 Sonnet (Thinking)", "score": 8.04, "provider": "Anthropic" },
+        { "name": "o1", "score": 7.96, "provider": "OpenAI" }
+      ],
+      "bestScore": 20.32,
+      "bestModel": "o3 (high)"
+    },
+    {
+      "date": "2025-06-15",
+      "models": [
+        { "name": "o3 (high)", "score": 20.32, "provider": "OpenAI" },
+        { "name": "o3 (medium)", "score": 19.20, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Experimental", "score": 18.16, "provider": "Google" },
+        { "name": "o4-mini (high)", "score": 18.08, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Preview", "score": 17.80, "provider": "Google" },
+        { "name": "o4-mini (medium)", "score": 14.28, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Flash", "score": 10.96, "provider": "Google" },
+        { "name": "glm-4p5", "score": 8.32, "provider": "Zhipu" },
+        { "name": "o1 Pro", "score": 8.12, "provider": "OpenAI" },
+        { "name": "glm-4p5-air", "score": 8.12, "provider": "Zhipu" },
+        { "name": "Llama 4 Maverick", "score": 5.68, "provider": "Meta" },
+        { "name": "GPT 4.5 Preview", "score": 5.44, "provider": "OpenAI" },
+        { "name": "GPT-4.1", "score": 5.40, "provider": "OpenAI" },
+        { "name": "Mistral Medium 3", "score": 4.52, "provider": "Mistral" },
+        { "name": "Nova Pro", "score": 4.40, "provider": "Amazon" },
+        { "name": "Nova Lite", "score": 3.64, "provider": "Amazon" }
+      ],
+      "bestScore": 20.32,
+      "bestModel": "o3 (high)"
+    },
+    {
+      "date": "2025-08-05",
+      "models": [
+        { "name": "o3 (high)", "score": 20.32, "provider": "OpenAI" },
+        { "name": "o3 (medium)", "score": 19.20, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Experimental", "score": 18.16, "provider": "Google" },
+        { "name": "o4-mini (high)", "score": 18.08, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Preview", "score": 17.80, "provider": "Google" },
+        { "name": "o4-mini (medium)", "score": 14.28, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Flash", "score": 10.96, "provider": "Google" },
+        { "name": "Claude Opus 4 (Thinking)", "score": 10.72, "provider": "Anthropic" },
+        { "name": "glm-4p5", "score": 8.32, "provider": "Zhipu" },
+        { "name": "o1 Pro", "score": 8.12, "provider": "OpenAI" },
+        { "name": "glm-4p5-air", "score": 8.12, "provider": "Zhipu" },
+        { "name": "Claude Opus 4", "score": 6.68, "provider": "Anthropic" }
+      ],
+      "bestScore": 20.32,
+      "bestModel": "o3 (high)"
+    },
+    {
+      "date": "2025-08-07",
+      "models": [
+        { "name": "gpt-5-2025-08-07", "score": 25.32, "provider": "OpenAI" },
+        { "name": "gpt-5.1-thinking", "score": 23.68, "provider": "OpenAI" },
+        { "name": "o3 (high)", "score": 20.32, "provider": "OpenAI" },
+        { "name": "gpt-5-mini-2025-08-07", "score": 19.44, "provider": "OpenAI" },
+        { "name": "o3 (medium)", "score": 19.20, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Experimental", "score": 18.16, "provider": "Google" },
+        { "name": "o4-mini (high)", "score": 18.08, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Preview", "score": 17.80, "provider": "Google" },
+        { "name": "o4-mini (medium)", "score": 14.28, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Flash", "score": 10.96, "provider": "Google" },
+        { "name": "Claude Opus 4 (Thinking)", "score": 10.72, "provider": "Anthropic" },
+        { "name": "gpt-5.1-instant", "score": 6.80, "provider": "OpenAI" }
+      ],
+      "bestScore": 25.32,
+      "bestModel": "gpt-5-2025-08-07"
+    },
+    {
+      "date": "2025-09-29",
+      "models": [
+        { "name": "gpt-5-2025-08-07", "score": 25.32, "provider": "OpenAI" },
+        { "name": "gpt-5.1-thinking", "score": 23.68, "provider": "OpenAI" },
+        { "name": "o3 (high)", "score": 20.32, "provider": "OpenAI" },
+        { "name": "gpt-5-mini-2025-08-07", "score": 19.44, "provider": "OpenAI" },
+        { "name": "o3 (medium)", "score": 19.20, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Experimental", "score": 18.16, "provider": "Google" },
+        { "name": "o4-mini (high)", "score": 18.08, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Preview", "score": 17.80, "provider": "Google" },
+        { "name": "o4-mini (medium)", "score": 14.28, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Flash", "score": 10.96, "provider": "Google" },
+        { "name": "Claude Opus 4 (Thinking)", "score": 10.72, "provider": "Anthropic" },
+        { "name": "Claude Sonnet 4 (Thinking)", "score": 7.76, "provider": "Anthropic" },
+        { "name": "Claude Sonnet 4", "score": 5.52, "provider": "Anthropic" }
+      ],
+      "bestScore": 25.32,
+      "bestModel": "gpt-5-2025-08-07"
+    },
+    {
+      "date": "2025-10-06",
+      "models": [
+        { "name": "gpt-5-pro-2025-10-06", "score": 31.64, "provider": "OpenAI" },
+        { "name": "gpt-5-2025-08-07", "score": 25.32, "provider": "OpenAI" },
+        { "name": "gpt-5.1-thinking", "score": 23.68, "provider": "OpenAI" },
+        { "name": "o3 (high)", "score": 20.32, "provider": "OpenAI" },
+        { "name": "gpt-5-mini-2025-08-07", "score": 19.44, "provider": "OpenAI" },
+        { "name": "o3 (medium)", "score": 19.20, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Experimental", "score": 18.16, "provider": "Google" },
+        { "name": "o4-mini (high)", "score": 18.08, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Preview", "score": 17.80, "provider": "Google" },
+        { "name": "o4-mini (medium)", "score": 14.28, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Flash", "score": 10.96, "provider": "Google" },
+        { "name": "Claude Opus 4 (Thinking)", "score": 10.72, "provider": "Anthropic" }
+      ],
+      "bestScore": 31.64,
+      "bestModel": "gpt-5-pro-2025-10-06"
+    },
+    {
+      "date": "2025-11-01",
+      "models": [
+        { "name": "gpt-5-pro-2025-10-06", "score": 31.64, "provider": "OpenAI" },
+        { "name": "gpt-5-2025-08-07", "score": 25.32, "provider": "OpenAI" },
+        { "name": "claude-opus-4-5-20251101-thinking", "score": 25.20, "provider": "Anthropic" },
+        { "name": "gpt-5.1-thinking", "score": 23.68, "provider": "OpenAI" },
+        { "name": "o3 (high)", "score": 20.32, "provider": "OpenAI" },
+        { "name": "gpt-5-mini-2025-08-07", "score": 19.44, "provider": "OpenAI" },
+        { "name": "o3 (medium)", "score": 19.20, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Experimental", "score": 18.16, "provider": "Google" },
+        { "name": "o4-mini (high)", "score": 18.08, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Preview", "score": 17.80, "provider": "Google" },
+        { "name": "o4-mini (medium)", "score": 14.28, "provider": "OpenAI" },
+        { "name": "claude-opus-4-5-20251101", "score": 14.16, "provider": "Anthropic" },
+        { "name": "Gemini 2.5 Flash", "score": 10.96, "provider": "Google" },
+        { "name": "Claude Opus 4 (Thinking)", "score": 10.72, "provider": "Anthropic" }
+      ],
+      "bestScore": 31.64,
+      "bestModel": "gpt-5-pro-2025-10-06"
+    },
+    {
+      "date": "2025-12-11",
+      "models": [
+        { "name": "gpt-5-pro-2025-10-06", "score": 31.64, "provider": "OpenAI" },
+        { "name": "gpt-5.2-2025-12-11", "score": 27.80, "provider": "OpenAI" },
+        { "name": "gpt-5-2025-08-07", "score": 25.32, "provider": "OpenAI" },
+        { "name": "claude-opus-4-5-20251101-thinking", "score": 25.20, "provider": "Anthropic" },
+        { "name": "gpt-5.1-thinking", "score": 23.68, "provider": "OpenAI" },
+        { "name": "o3 (high)", "score": 20.32, "provider": "OpenAI" },
+        { "name": "gpt-5-mini-2025-08-07", "score": 19.44, "provider": "OpenAI" },
+        { "name": "o3 (medium)", "score": 19.20, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Experimental", "score": 18.16, "provider": "Google" },
+        { "name": "o4-mini (high)", "score": 18.08, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Preview", "score": 17.80, "provider": "Google" },
+        { "name": "o4-mini (medium)", "score": 14.28, "provider": "OpenAI" },
+        { "name": "claude-opus-4-5-20251101", "score": 14.16, "provider": "Anthropic" },
+        { "name": "Gemini 2.5 Flash", "score": 10.96, "provider": "Google" }
+      ],
+      "bestScore": 31.64,
+      "bestModel": "gpt-5-pro-2025-10-06"
+    },
+    {
+      "date": "2025-12-20",
+      "models": [
+        { "name": "gemini-3-pro-preview", "score": 37.52, "provider": "Google" },
+        { "name": "gpt-5-pro-2025-10-06", "score": 31.64, "provider": "OpenAI" },
+        { "name": "gpt-5.2-2025-12-11", "score": 27.80, "provider": "OpenAI" },
+        { "name": "gpt-5-2025-08-07", "score": 25.32, "provider": "OpenAI" },
+        { "name": "claude-opus-4-5-20251101-thinking", "score": 25.20, "provider": "Anthropic" },
+        { "name": "gpt-5.1-thinking", "score": 23.68, "provider": "OpenAI" },
+        { "name": "o3 (high)", "score": 20.32, "provider": "OpenAI" },
+        { "name": "gpt-5-mini-2025-08-07", "score": 19.44, "provider": "OpenAI" },
+        { "name": "o3 (medium)", "score": 19.20, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Experimental", "score": 18.16, "provider": "Google" },
+        { "name": "o4-mini (high)", "score": 18.08, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Preview", "score": 17.80, "provider": "Google" },
+        { "name": "o4-mini (medium)", "score": 14.28, "provider": "OpenAI" },
+        { "name": "claude-opus-4-5-20251101", "score": 14.16, "provider": "Anthropic" },
+        { "name": "Gemini 2.5 Flash", "score": 10.96, "provider": "Google" },
+        { "name": "Claude Opus 4 (Thinking)", "score": 10.72, "provider": "Anthropic" },
+        { "name": "glm-4p5", "score": 8.32, "provider": "Zhipu" },
+        { "name": "o1 Pro", "score": 8.12, "provider": "OpenAI" },
+        { "name": "glm-4p5-air", "score": 8.12, "provider": "Zhipu" },
+        { "name": "Claude 3.7 Sonnet (Thinking)", "score": 8.04, "provider": "Anthropic" },
+        { "name": "o1", "score": 7.96, "provider": "OpenAI" },
+        { "name": "Claude Sonnet 4 (Thinking)", "score": 7.76, "provider": "Anthropic" },
+        { "name": "gpt-5.1-instant", "score": 6.80, "provider": "OpenAI" },
+        { "name": "Claude Opus 4", "score": 6.68, "provider": "Anthropic" },
+        { "name": "Gemini 2.0 Flash Thinking", "score": 6.56, "provider": "Google" },
+        { "name": "Llama 4 Maverick", "score": 5.68, "provider": "Meta" },
+        { "name": "Claude Sonnet 4", "score": 5.52, "provider": "Anthropic" },
+        { "name": "GPT 4.5 Preview", "score": 5.44, "provider": "OpenAI" },
+        { "name": "GPT-4.1", "score": 5.40, "provider": "OpenAI" },
+        { "name": "Gemini-1.5-Pro-002", "score": 4.60, "provider": "Google" },
+        { "name": "Mistral Medium 3", "score": 4.52, "provider": "Mistral" },
+        { "name": "Nova Pro", "score": 4.40, "provider": "Amazon" },
+        { "name": "Claude 3.5 Sonnet", "score": 4.08, "provider": "Anthropic" },
+        { "name": "Nova Lite", "score": 3.64, "provider": "Amazon" },
+        { "name": "GPT-4o", "score": 2.72, "provider": "OpenAI" }
+      ],
+      "bestScore": 37.52,
+      "bestModel": "gemini-3-pro-preview"
+    }
+  ],
+  "projection": {
+    "method": "exponential",
+    "doublingTimeDays": 365,
+    "startDate": "2024-10-01",
+    "startScore": 4.08,
+    "targetScore": 100,
+    "note": "Using Moore's Law style exponential growth with ~12 month doubling time"
+  }
+}

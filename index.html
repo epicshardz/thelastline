@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE LAST LINE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20251222b">
+</head>
+<body>
+    <!-- CRT Scanline Overlay -->
+    <div class="scanlines"></div>
+    <div class="crt-flicker"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <header class="terminal-header">
+            <div class="terminal-bar">
+                <span class="terminal-btn red"></span>
+                <span class="terminal-btn yellow"></span>
+                <span class="terminal-btn green"></span>
+                <span class="terminal-title">HUMANITY'S LAST EXAM // MONITORING SYSTEM</span>
+            </div>
+        </header>
+
+        <!-- Main Title -->
+        <div class="main-title">
+            <h1 class="glitch" data-text="THE LAST LINE">THE LAST LINE</h1>
+            <p class="subtitle">[ TRACKING AI PROGRESS ON HUMANITY'S LAST EXAM ]</p>
+        </div>
+
+        <!-- Countdown Section -->
+        <section class="countdown-section">
+            <div class="section-header">
+                <span class="prompt">&gt;</span> PROJECTED DATE OF 100% ACHIEVEMENT
+                <select id="fitSelector" class="fit-selector" onchange="setCountdownFit(this.value)">
+                    <option value="mooresLaw">🖥️ Moore's Law</option>
+                    <option value="exponential">📈 Exponential</option>
+                    <option value="polynomial">📊 Polynomial</option>
+                    <option value="linear">📏 Linear</option>
+                    <option value="logistic">🔔 Logistic</option>
+                    <option value="powerLaw">⚡ Power Law</option>
+                    <option value="logarithmic">📉 Logarithmic</option>
+                    <option value="ridge">🏔️ Ridge</option>
+                    <option value="localLinear">📍 Local Linear</option>
+                </select>
+            </div>
+            <div class="target-date" id="targetDate">CALCULATING...</div>
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <span class="countdown-value" id="days">000</span>
+                    <span class="countdown-label">DAYS</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="hours">00</span>
+                    <span class="countdown-label">HOURS</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="minutes">00</span>
+                    <span class="countdown-label">MINS</span>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="seconds">00</span>
+                    <span class="countdown-label">SECS</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Best Score -->
+        <section class="stats-section">
+            <div class="stat-box">
+                <div class="stat-label">CURRENT BEST SCORE</div>
+                <div class="stat-value" id="currentBest">--.--%</div>
+                <div class="stat-model" id="bestModel">---</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">REMAINING TO 100%</div>
+                <div class="stat-value" id="remaining">--.--%</div>
+                <div class="stat-model">TO GO</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">LAST UPDATED</div>
+                <div class="stat-value" id="lastUpdated">----</div>
+                <div class="stat-model">DATA SYNC</div>
+            </div>
+        </section>
+
+        <!-- Chart Section -->
+        <section class="chart-section">
+            <div class="section-header">
+                <span class="prompt">&gt;</span> MODEL PERFORMANCE RANKINGS
+            </div>
+            <div class="chart-container">
+                <canvas id="scoreChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Projection Section -->
+        <section class="projection-section">
+            <div class="section-header">
+                <span class="prompt">&gt;</span> HISTORICAL PROGRESS & PROJECTION
+            </div>
+            <div class="chart-container projection-chart">
+                <canvas id="projectionChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="terminal-footer">
+            <p>DATA SOURCE: <a href="https://artificialanalysis.ai/evaluations/humanitys-last-exam" target="_blank" rel="noopener">ARTIFICIAL ANALYSIS</a></p>
+            <p>SYSTEM STATUS: <span class="status-online">● ONLINE</span> | AUTO-UPDATE: DAILY</p>
+            <p class="copyright">[ THE LAST LINE ] // MONITORING HUMANITY'S FINAL EXAM</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+    <script src="script.js?v=20251222l"></script>
+</body>
+</html>
