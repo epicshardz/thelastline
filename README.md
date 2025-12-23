@@ -15,7 +15,7 @@ A retro-styled website tracking AI progress on **Humanity's Last Exam** (HLE) - 
 ## 🚀 Quick Start
 
 ### View the Site
-Visit: `https://epicshardz.github.io/thelastline`
+Visit: `https://epicshardz.github.io`
 
 ### Local Development
 1. Clone the repository
@@ -45,7 +45,7 @@ thelastline/
 
 ## 🔧 Setup GitHub Pages
 
-1. **Create a GitHub repository** named `thelastline`
+1. **Create a GitHub repository** named `epicshardz.github.io`
 
 2. **Push this code** to the repository:
    ```bash
@@ -53,17 +53,13 @@ thelastline/
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/epicshardz/thelastline.git
+   git remote add origin https://github.com/epicshardz/epicshardz.github.io.git
    git push -u origin main
    ```
 
-3. **Enable GitHub Pages**:
-   - Go to repository Settings → Pages
-   - Source: Deploy from a branch
-   - Branch: `main` / `root`
-   - Save
+3. **GitHub Pages is automatically enabled** for `username.github.io` repositories
 
-4. **Your site will be live at**: `https://epicshardz.github.io/thelastline`
+4. **Your site will be live at**: `https://epicshardz.github.io`
 
 ## 📊 Data Source
 
