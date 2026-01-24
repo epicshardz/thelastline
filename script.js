@@ -9,7 +9,7 @@ let scoreChart = null;
 let projectionChart = null;
 let countdownInterval = null;
 let targetDate = null;
-let currentFit = 'mooresLaw'; // Default fit for countdown: mooresLaw, polynomial, exponential, linear, etc.
+let currentFit = 'powerLaw'; // Default fit for countdown: mooresLaw, polynomial, exponential, linear, etc.
 let allFits = null; // Store all calculated fits
 let referenceDate = null; // Reference date for calculations
 
@@ -107,8 +107,7 @@ function buildFits() {
         polynomial: polynomialFit(historicalPoints),
         logistic: logisticFit(historicalPoints, 100),
         powerLaw: powerLawFit(historicalPoints),
-        ridge: ridgeFit(historicalPoints),
-        localLinear: localLinearFit(historicalPoints)
+        ridge: ridgeFit(historicalPoints)
     };
     
     return { historicalPoints, sortedDates };
@@ -400,11 +399,6 @@ const FIT_CONFIGS = {
         color: '#ff8888',
         dash: [6, 6]
     },
-    localLinear: {
-        label: '📍 Local Linear',
-        color: '#88ff88',
-        dash: [4, 4]
-    }
 };
 
 // Initialize the projection line chart with historical data and exponential projection
@@ -500,8 +494,7 @@ function initializeProjectionChart() {
                                    item.text.includes('📊') ||
                                    item.text.includes('🔔') ||
                                    item.text.includes('⚡') ||
-                                   item.text.includes('🏔️') ||
-                                   item.text.includes('📍');
+                                   item.text.includes('🏔️');
                         }
                     }
                 },
@@ -968,8 +961,7 @@ function generateProjectionData(projection) {
         polynomial: polynomialFit(historicalPoints),
         logistic: logisticFit(historicalPoints, 100),
         powerLaw: powerLawFit(historicalPoints),
-        ridge: ridgeFit(historicalPoints),
-        localLinear: localLinearFit(historicalPoints)
+        ridge: ridgeFit(historicalPoints)
     };
     
     // Get the latest data point
@@ -986,8 +978,7 @@ function generateProjectionData(projection) {
         polynomial: labels.map(() => null),
         logistic: labels.map(() => null),
         powerLaw: labels.map(() => null),
-        ridge: labels.map(() => null),
-        localLinear: labels.map(() => null)
+        ridge: labels.map(() => null)
     };
     
     // Set starting point for ALL projections to the actual current best score

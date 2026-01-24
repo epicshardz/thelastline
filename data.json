@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-12-22",
+  "lastUpdated": "2026-01-24",
   "benchmarkInfo": {
     "name": "Humanity's Last Exam",
     "description": "A benchmark of 3,000 questions across academic disciplines from 500+ subject experts",
@@ -16,6 +16,7 @@
     { "date": "2025-04-01", "score": 20.32, "model": "o3 (high)", "provider": "OpenAI" },
     { "date": "2025-08-07", "score": 25.32, "model": "gpt-5-2025-08-07", "provider": "OpenAI" },
     { "date": "2025-10-06", "score": 31.64, "model": "gpt-5-pro-2025-10-06", "provider": "OpenAI" },
+    { "date": "2025-12-01", "score": 52.15, "model": "Sup AI", "provider": "Sup AI" },
     { "date": "2025-12-20", "score": 37.52, "model": "gemini-3-pro-preview", "provider": "Google" }
   ],
   "scores": [
@@ -57,6 +58,14 @@
       ],
       "bestScore": 7.96,
       "bestModel": "o1"
+    },
+    {
+      "date": "2025-01-21",
+      "models": [
+        { "name": "ERNIE 5.0", "score": 39.0, "provider": "Baidu" }
+      ],
+      "bestScore": 39.0,
+      "bestModel": "ERNIE 5.0"
     },
     {
       "date": "2025-02-01",
@@ -186,6 +195,14 @@
       "bestModel": "gpt-5-2025-08-07"
     },
     {
+      "date": "2025-09-04",
+      "models": [
+        { "name": "Kimi K2-Thinking-0905", "score": 51.0, "provider": "Moonshot" }
+      ],
+      "bestScore": 51.0,
+      "bestModel": "Kimi K2-Thinking-0905"
+    },
+    {
       "date": "2025-09-29",
       "models": [
         { "name": "gpt-5-2025-08-07", "score": 25.32, "provider": "OpenAI" },
@@ -246,6 +263,14 @@
       "bestModel": "gpt-5-pro-2025-10-06"
     },
     {
+      "date": "2025-12-01",
+      "models": [
+        { "name": "Sup AI", "score": 52.15, "provider": "Sup AI" }
+      ],
+      "bestScore": 52.15,
+      "bestModel": "Sup AI"
+    },
+    {
       "date": "2025-12-11",
       "models": [
         { "name": "gpt-5-pro-2025-10-06", "score": 31.64, "provider": "OpenAI" },
@@ -265,6 +290,14 @@
       ],
       "bestScore": 31.64,
       "bestModel": "gpt-5-pro-2025-10-06"
+    },
+    {
+      "date": "2025-12-12",
+      "models": [
+        { "name": "Grok 4 - Reasoning w/Tools", "score": 51.0, "provider": "xAI" }
+      ],
+      "bestScore": 51.0,
+      "bestModel": "Grok 4 - Reasoning w/Tools"
     },
     {
       "date": "2025-12-20",
@@ -307,6 +340,38 @@
       ],
       "bestScore": 37.52,
       "bestModel": "gemini-3-pro-preview"
+    },
+    {
+      "date": "2025-12-21",
+      "models": [
+        { "name": "Sup AI", "score": 52.15, "provider": "Sup AI" },
+        { "name": "Kimi K2-Thinking-0905", "score": 51.0, "provider": "Moonshot" },
+        { "name": "Grok 4 - Reasoning w/Tools", "score": 51.0, "provider": "xAI" },
+        { "name": "GLM-4.7", "score": 42.8, "provider": "Zhipu" },
+        { "name": "ERNIE 5.0", "score": 39.0, "provider": "Baidu" },
+        { "name": "gemini-3-pro-preview", "score": 37.52, "provider": "Google" },
+        { "name": "gpt-5-pro-2025-10-06", "score": 31.64, "provider": "OpenAI" },
+        { "name": "gpt-5.2-2025-12-11", "score": 27.80, "provider": "OpenAI" },
+        { "name": "gpt-5-2025-08-07", "score": 25.32, "provider": "OpenAI" },
+        { "name": "claude-opus-4-5-20251101-thinking", "score": 25.20, "provider": "Anthropic" },
+        { "name": "gpt-5.1-thinking", "score": 23.68, "provider": "OpenAI" },
+        { "name": "o3 (high)", "score": 20.32, "provider": "OpenAI" },
+        { "name": "gpt-5-mini-2025-08-07", "score": 19.44, "provider": "OpenAI" },
+        { "name": "o3 (medium)", "score": 19.20, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Experimental", "score": 18.16, "provider": "Google" },
+        { "name": "o4-mini (high)", "score": 18.08, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Preview", "score": 17.80, "provider": "Google" },
+        { "name": "o4-mini (medium)", "score": 14.28, "provider": "OpenAI" },
+        { "name": "claude-opus-4-5-20251101", "score": 14.16, "provider": "Anthropic" },
+        { "name": "Gemini 2.5 Flash", "score": 10.96, "provider": "Google" },
+        { "name": "Claude Opus 4 (Thinking)", "score": 10.72, "provider": "Anthropic" },
+        { "name": "glm-4p5", "score": 8.32, "provider": "Zhipu" },
+        { "name": "o1 Pro", "score": 8.12, "provider": "OpenAI" },
+        { "name": "glm-4p5-air", "score": 8.12, "provider": "Zhipu" },
+        { "name": "Claude 3.7 Sonnet (Thinking)", "score": 8.04, "provider": "Anthropic" }
+      ],
+      "bestScore": 52.15,
+      "bestModel": "Sup AI"
     }
   ],
   "projection": {
