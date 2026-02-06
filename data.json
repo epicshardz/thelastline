@@ -377,7 +377,26 @@
     {
       "date": "2026-02-05",
       "models": [
-        { "name": "Claude Opus 4.6", "score": 53.1, "provider": "Anthropic" }
+        { "name": "Claude Opus 4.6", "score": 53.1, "provider": "Anthropic" },
+        { "name": "Sup AI", "score": 52.15, "provider": "Sup AI" },
+        { "name": "Kimi K2-Thinking-0905", "score": 51.0, "provider": "Moonshot" },
+        { "name": "Grok 4 - Reasoning w/Tools", "score": 51.0, "provider": "xAI" },
+        { "name": "GLM-4.7", "score": 42.8, "provider": "Zhipu" },
+        { "name": "ERNIE 5.0", "score": 39.0, "provider": "Baidu" },
+        { "name": "gemini-3-pro-preview", "score": 37.52, "provider": "Google" },
+        { "name": "gpt-5-pro-2025-10-06", "score": 31.64, "provider": "OpenAI" },
+        { "name": "gpt-5.2-2025-12-11", "score": 27.80, "provider": "OpenAI" },
+        { "name": "gpt-5-2025-08-07", "score": 25.32, "provider": "OpenAI" },
+        { "name": "claude-opus-4-5-20251101-thinking", "score": 25.20, "provider": "Anthropic" },
+        { "name": "gpt-5.1-thinking", "score": 23.68, "provider": "OpenAI" },
+        { "name": "o3 (high)", "score": 20.32, "provider": "OpenAI" },
+        { "name": "gpt-5-mini-2025-08-07", "score": 19.44, "provider": "OpenAI" },
+        { "name": "o3 (medium)", "score": 19.20, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Experimental", "score": 18.16, "provider": "Google" },
+        { "name": "o4-mini (high)", "score": 18.08, "provider": "OpenAI" },
+        { "name": "Gemini 2.5 Pro Preview", "score": 17.80, "provider": "Google" },
+        { "name": "o4-mini (medium)", "score": 14.28, "provider": "OpenAI" },
+        { "name": "claude-opus-4-5-20251101", "score": 14.16, "provider": "Anthropic" }
       ],
       "bestScore": 53.1,
       "bestModel": "Claude Opus 4.6"
