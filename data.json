@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-01-24",
+  "lastUpdated": "2026-02-05",
   "benchmarkInfo": {
     "name": "Humanity's Last Exam",
     "description": "A benchmark of 3,000 questions across academic disciplines from 500+ subject experts",
@@ -17,7 +17,8 @@
     { "date": "2025-08-07", "score": 25.32, "model": "gpt-5-2025-08-07", "provider": "OpenAI" },
     { "date": "2025-10-06", "score": 31.64, "model": "gpt-5-pro-2025-10-06", "provider": "OpenAI" },
     { "date": "2025-12-01", "score": 52.15, "model": "Sup AI", "provider": "Sup AI" },
-    { "date": "2025-12-20", "score": 37.52, "model": "gemini-3-pro-preview", "provider": "Google" }
+    { "date": "2025-12-20", "score": 37.52, "model": "gemini-3-pro-preview", "provider": "Google" },
+    { "date": "2026-02-05", "score": 53.1, "model": "Claude Opus 4.6", "provider": "Anthropic" }
   ],
   "scores": [
     {
@@ -372,6 +373,14 @@
       ],
       "bestScore": 52.15,
       "bestModel": "Sup AI"
+    },
+    {
+      "date": "2026-02-05",
+      "models": [
+        { "name": "Claude Opus 4.6", "score": 53.1, "provider": "Anthropic" }
+      ],
+      "bestScore": 53.1,
+      "bestModel": "Claude Opus 4.6"
     }
   ],
   "projection": {
