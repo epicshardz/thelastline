@@ -12,6 +12,108 @@ let targetDate = null;
 let currentFit = 'powerLaw'; // Default fit for countdown: mooresLaw, polynomial, exponential, linear, etc.
 let allFits = null; // Store all calculated fits
 let referenceDate = null; // Reference date for calculations
+const CLUSTER_MIN_POINTS = 6; // Minimum points to attempt clustering
+const CLUSTER_KMEANS_ITERS = 10; // Simple 1D k-means iterations
+const FIT_SAMPLE_DAYS = 7; // Denser sampling for smooth non-linear curves
+const PROJECTION_END_YEAR = 2028;
+const TRENDLINE_STOP_AT = 115; // Stop drawing when lines hit the top of the chart
+const SCATTER_TOP_PER_DATE = 5; // Reduce clutter: only show top N models per date
+
+function average(values) {
+    if (!values || values.length === 0) return 0;
+    const sum = values.reduce((acc, v) => acc + v, 0);
+    return sum / values.length;
+}
+
+function clusterMean(values) {
+    if (!values || values.length === 0) return 0;
+    if (values.length < CLUSTER_MIN_POINTS) {
+        return average(values);
+    }
+    
+    let c1 = Math.min(...values);
+    let c2 = Math.max(...values);
+    let clusterA = [];
+    let clusterB = [];
+    
+    for (let i = 0; i < CLUSTER_KMEANS_ITERS; i++) {
+        clusterA = [];
+        clusterB = [];
+        
+        values.forEach(value => {
+            if (Math.abs(value - c1) <= Math.abs(value - c2)) {
+                clusterA.push(value);
+            } else {
+                clusterB.push(value);
+            }
+        });
+        
+        if (clusterA.length === 0 || clusterB.length === 0) {
+            return average(values);
+        }
+        
+        const nextC1 = average(clusterA);
+        const nextC2 = average(clusterB);
+        
+        if (Math.abs(nextC1 - c1) < 1e-6 && Math.abs(nextC2 - c2) < 1e-6) {
+            c1 = nextC1;
+            c2 = nextC2;
+            break;
+        }
+        
+        c1 = nextC1;
+        c2 = nextC2;
+    }
+    
+    const highCluster = c1 >= c2 ? clusterA : clusterB;
+    return average(highCluster);
+}
+
+function buildDateMaps() {
+    const dateMap = new Map();
+    const clusterMap = new Map();
+    const datesWithModels = new Set();
+    
+    data.scores.forEach(scoreEntry => {
+        const dateStr = scoreEntry.date;
+        const entryDate = new Date(dateStr);
+        datesWithModels.add(dateStr);
+        
+        if (!dateMap.has(dateStr)) {
+            dateMap.set(dateStr, { bestScore: scoreEntry.bestScore, date: entryDate });
+        } else {
+            const existing = dateMap.get(dateStr);
+            if (scoreEntry.bestScore > existing.bestScore) {
+                existing.bestScore = scoreEntry.bestScore;
+            }
+        }
+        
+        const scores = scoreEntry.models.map(model => model.score);
+        const meanScore = clusterMean(scores);
+        clusterMap.set(dateStr, { date: entryDate, meanScore });
+    });
+    
+    if (data.historicalBestScores) {
+        data.historicalBestScores.forEach(milestone => {
+            const dateStr = milestone.date;
+            const entryDate = new Date(dateStr);
+            if (!dateMap.has(dateStr)) {
+                dateMap.set(dateStr, { bestScore: milestone.score, date: entryDate });
+            } else {
+                const existing = dateMap.get(dateStr);
+                if (milestone.score > existing.bestScore) {
+                    existing.bestScore = milestone.score;
+                }
+            }
+            
+            if (!datesWithModels.has(dateStr) && !clusterMap.has(dateStr)) {
+                clusterMap.set(dateStr, { date: entryDate, meanScore: milestone.score });
+            }
+        });
+    }
+    
+    return { dateMap, clusterMap };
+}
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', async () => {
@@ -65,36 +167,14 @@ function getFallbackData() {
 
 // Build historical points and calculate all fits (called once on init)
 function buildFits() {
-    const dateMap = new Map();
-    
-    if (data.historicalBestScores) {
-        data.historicalBestScores.forEach(milestone => {
-            const dateStr = milestone.date;
-            if (!dateMap.has(dateStr)) {
-                dateMap.set(dateStr, { bestScore: milestone.score, date: new Date(dateStr) });
-            }
-        });
-    }
-    
-    data.scores.forEach(scoreEntry => {
-        const dateStr = scoreEntry.date;
-        if (!dateMap.has(dateStr)) {
-            dateMap.set(dateStr, { bestScore: scoreEntry.bestScore, date: new Date(dateStr) });
-        } else {
-            const existing = dateMap.get(dateStr);
-            if (scoreEntry.bestScore > existing.bestScore) {
-                existing.bestScore = scoreEntry.bestScore;
-            }
-        }
-    });
-    
+    const { dateMap, clusterMap } = buildDateMaps();
     const sortedDates = Array.from(dateMap.entries())
         .sort((a, b) => a[1].date - b[1].date);
     
     referenceDate = sortedDates[0][1].date;
-    const historicalPoints = sortedDates.map(([dateStr, info]) => {
-        const daysSinceRef = (info.date - referenceDate) / (1000 * 60 * 60 * 24);
-        return { x: daysSinceRef, y: info.bestScore };
+    const historicalPoints = Array.from(clusterMap.values()).map(point => {
+        const daysSinceRef = (point.date - referenceDate) / (1000 * 60 * 60 * 24);
+        return { x: daysSinceRef, y: point.meanScore };
     });
     
     const doublingTimeDays = data.projection.doublingTimeDays || 365;
@@ -408,6 +488,12 @@ function initializeProjectionChart() {
     
     // Generate data points for the projection
     const dataPoints = generateProjectionData(projection);
+    const referenceDate = dataPoints.referenceDate;
+    const dateFromDays = (days) => {
+        const date = new Date(referenceDate);
+        date.setDate(date.getDate() + Math.round(days));
+        return formatDateShort(date);
+    };
     
     // Create datasets for historical model scores at their actual dates
     const historicalModelDatasets = createHistoricalModelDatasets(dataPoints);
@@ -428,11 +514,12 @@ function initializeProjectionChart() {
             pointBackgroundColor: config.color,
             pointBorderColor: '#ffffff',
             pointBorderWidth: 1,
-            pointRadius: 4,
-            pointHoverRadius: 8,
+            pointRadius: 0,
+            pointHoverRadius: 0,
+            pointHitRadius: 6,
             fill: false,
-            tension: 0.3,
-            spanGaps: true,
+            tension: 0,
+            spanGaps: false,
             order: 0
         };
     });
@@ -440,12 +527,11 @@ function initializeProjectionChart() {
     projectionChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: dataPoints.labels,
             datasets: [
                 // Best score progression line - THICK GREEN LINE
                 {
                     label: '🟢 ACTUAL BEST SCORE',
-                    data: dataPoints.bestScores,
+                    data: dataPoints.bestScorePoints,
                     borderColor: '#00ff00',
                     backgroundColor: 'rgba(0, 255, 0, 0.2)',
                     borderWidth: 5,
@@ -515,15 +601,21 @@ function initializeProjectionChart() {
                     padding: 12,
                     callbacks: {
                         title: function(context) {
-                            return context[0].label;
+                            const days = context[0].parsed.x;
+                            return dateFromDays(days);
                         },
                         label: function(context) {
-                            if (context.raw === null || context.raw === undefined) return null;
+                            if (context.parsed.y === null || context.parsed.y === undefined) return null;
                             const datasetLabel = context.dataset.label;
-                            if (datasetLabel.includes('PROJECTION')) {
-                                return `Projected: ${context.raw.toFixed(1)}%`;
+                            const raw = context.raw;
+                            if (raw && raw.model) {
+                                const provider = raw.provider ? ` (${raw.provider})` : '';
+                                return `${raw.model}${provider}: ${context.parsed.y.toFixed(1)}%`;
                             }
-                            return `${datasetLabel}: ${context.raw.toFixed(1)}%`;
+                            if (datasetLabel.includes('PROJECTION')) {
+                                return `Projected: ${context.parsed.y.toFixed(1)}%`;
+                            }
+                            return `${datasetLabel}: ${context.parsed.y.toFixed(1)}%`;
                         }
                     }
                 },
@@ -555,6 +647,9 @@ function initializeProjectionChart() {
             },
             scales: {
                 x: {
+                    type: 'linear',
+                    min: 0,
+                    max: dataPoints.maxDays,
                     grid: {
                         color: '#00ff0020',
                         drawBorder: false
@@ -566,7 +661,10 @@ function initializeProjectionChart() {
                             size: 14
                         },
                         maxRotation: 45,
-                        minRotation: 45
+                        minRotation: 45,
+                        callback: function(value) {
+                            return dateFromDays(value);
+                        }
                     }
                 },
                 y: {
@@ -597,55 +695,58 @@ function initializeProjectionChart() {
 // Only shows each model at its EARLIEST appearance (no duplicates)
 function createHistoricalModelDatasets(dataPoints) {
     const datasets = [];
-    const plottedModels = new Set(); // Track models already plotted
+    const referenceDate = dataPoints.referenceDate;
+    const endDate = dataPoints.endDate;
+    const points = [];
+    const pointColors = [];
     
     // Sort score entries by date (earliest first)
     const sortedScores = [...data.scores].sort((a, b) => 
         new Date(a.date) - new Date(b.date)
     );
     
-    // Go through each score entry chronologically
+    // Add top N model points per date
     sortedScores.forEach((scoreEntry) => {
         const entryDate = new Date(scoreEntry.date);
-        const entryDateLabel = formatDateShort(entryDate);
-        const labelIndex = dataPoints.labels.indexOf(entryDateLabel);
+        if (entryDate > endDate) return;
+        const daysSinceRef = (entryDate - referenceDate) / (1000 * 60 * 60 * 24);
         
-        if (labelIndex === -1) return;
+        const topModels = [...scoreEntry.models]
+            .sort((a, b) => b.score - a.score)
+            .slice(0, SCATTER_TOP_PER_DATE);
         
-        // For the top 5 models at each date, create scatter points (if not already plotted)
-        const topModels = [...scoreEntry.models].sort((a, b) => b.score - a.score).slice(0, 5);
-        
-        topModels.forEach((model, modelIndex) => {
-            // Skip if this model was already plotted at an earlier date
-            if (plottedModels.has(model.name)) return;
-            
-            plottedModels.add(model.name);
-            const color = getProviderColor(model.provider);
-            
-            // Create data array with null everywhere except at this date
-            const modelData = dataPoints.labels.map((label, i) => {
-                if (i === labelIndex) {
-                    return model.score;
-                }
-                return null;
-            });
-            
-            datasets.push({
-                label: model.name,
-                data: modelData,
-                borderColor: color,
-                backgroundColor: color + 'CC',
-                borderWidth: 2,
-                pointBackgroundColor: color,
-                pointBorderColor: '#ffffff',
-                pointBorderWidth: 1,
-                pointRadius: 5,
-                pointHoverRadius: 8,
-                fill: false,
-                showLine: false,
-                order: 3 + modelIndex
-            });
+        topModels.forEach((model) => {
+            points.push({ x: daysSinceRef, y: model.score, model: model.name, provider: model.provider });
+            pointColors.push(getProviderColor(model.provider));
         });
+    });
+    
+    // Add historical best scores if there are dates with no model list
+    const datesWithModels = new Set(data.scores.map(entry => entry.date));
+    if (data.historicalBestScores) {
+        data.historicalBestScores.forEach((milestone) => {
+            if (datesWithModels.has(milestone.date)) return;
+            const entryDate = new Date(milestone.date);
+            if (entryDate > endDate) return;
+            const daysSinceRef = (entryDate - referenceDate) / (1000 * 60 * 60 * 24);
+            points.push({ x: daysSinceRef, y: milestone.score, model: milestone.model, provider: milestone.provider });
+            pointColors.push(getProviderColor(milestone.provider));
+        });
+    }
+    
+    datasets.push({
+        label: 'Top Models',
+        data: points,
+        borderColor: '#00ff00',
+        backgroundColor: pointColors,
+        pointBackgroundColor: pointColors,
+        pointBorderColor: '#ffffff',
+        pointBorderWidth: 1,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        fill: false,
+        showLine: false,
+        order: 2
     });
     
     return datasets;
@@ -655,27 +756,19 @@ function createHistoricalModelDatasets(dataPoints) {
 function createModelDatasets(dataPoints) {
     const latestData = data.scores[data.scores.length - 1];
     const models = latestData.models;
+    const referenceDate = dataPoints.referenceDate;
     
-    // Find the index where the current date is in the labels
+    // Find the x position for the current date
     const latestDate = new Date(latestData.date);
-    const latestDateLabel = formatDateShort(latestDate);
-    const currentDateIndex = dataPoints.labels.indexOf(latestDateLabel);
+    const daysSinceRef = (latestDate - referenceDate) / (1000 * 60 * 60 * 24);
     
     // Create a dataset for each model
     return models.map((model, index) => {
-        // Create an array with nulls except at the current date
-        const modelData = dataPoints.labels.map((label, i) => {
-            if (i === currentDateIndex) {
-                return model.score;
-            }
-            return null;
-        });
-        
         const color = getProviderColor(model.provider);
         
         return {
             label: model.name,
-            data: modelData,
+            data: [{ x: daysSinceRef, y: model.score }],
             borderColor: color,
             backgroundColor: color,
             borderWidth: 2,
@@ -838,19 +931,31 @@ function powerLawFit(points) {
     return { a, b, predict: (x) => a * Math.pow(x, b) };
 }
 
-// Moore's Law fit: y = startScore * 2^((x - startDay) / doublingTime)
-// Uses fixed 365-day doubling time, starting from latest data point
+// Moore's Law fit: y = startScore * 2^(x / doublingTime)
+// Uses fixed doubling time, but fits startScore to all points (mean fit in log2 space)
 function mooresLawFit(points, doublingTimeDays = 365) {
-    // Use the LAST point (latest data) as baseline for Moore's Law projection
-    const lastPoint = points[points.length - 1];
-    const startScore = lastPoint.y;
-    const startDay = lastPoint.x;
+    const valid = points.filter(p => p.y > 0);
+    if (valid.length === 0) {
+        return {
+            startScore: 0,
+            startDay: 0,
+            doublingTimeDays,
+            predict: () => 0
+        };
+    }
     
-    return { 
-        startScore, 
-        startDay,
+    const log2 = (value) => Math.log(value) / Math.log(2);
+    const meanLogIntercept = valid.reduce((sum, p) => {
+        return sum + (log2(p.y) - (p.x / doublingTimeDays));
+    }, 0) / valid.length;
+    
+    const startScore = Math.pow(2, meanLogIntercept);
+    
+    return {
+        startScore,
+        startDay: 0,
         doublingTimeDays,
-        predict: (x) => startScore * Math.pow(2, (x - startDay) / doublingTimeDays) 
+        predict: (x) => startScore * Math.pow(2, x / doublingTimeDays)
     };
 }
 
@@ -904,55 +1009,32 @@ function daysTo100(fit, startDay, startScore) {
 
 // Generate projection data points with historical context
 function generateProjectionData(projection) {
-    // Collect all unique dates with their data
-    const dateMap = new Map();
-    
-    // Add historical best scores
-    if (data.historicalBestScores) {
-        data.historicalBestScores.forEach(milestone => {
-            const dateStr = milestone.date;
-            if (!dateMap.has(dateStr)) {
-                dateMap.set(dateStr, { bestScore: milestone.score, date: new Date(dateStr) });
-            }
-        });
-    }
-    
-    // Add scores from scores array (may override or add new)
-    data.scores.forEach(scoreEntry => {
-        const dateStr = scoreEntry.date;
-        if (!dateMap.has(dateStr)) {
-            dateMap.set(dateStr, { bestScore: scoreEntry.bestScore, date: new Date(dateStr) });
-        } else {
-            const existing = dateMap.get(dateStr);
-            if (scoreEntry.bestScore > existing.bestScore) {
-                existing.bestScore = scoreEntry.bestScore;
-            }
-        }
-    });
-    
-    // Sort dates chronologically
+    const { dateMap, clusterMap } = buildDateMaps();
     const sortedDates = Array.from(dateMap.entries())
         .sort((a, b) => a[1].date - b[1].date);
     
-    // Build labels and bestScores arrays
-    const labels = [];
-    const bestScores = [];
+    // Build best-score points
+    const bestScorePoints = [];
+    const endDate = new Date(PROJECTION_END_YEAR, 11, 31);
     
     // Reference date for calculating days
     const referenceDate = sortedDates[0][1].date;
-    const historicalPoints = [];
     
     sortedDates.forEach(([dateStr, info]) => {
-        labels.push(formatDateShort(info.date));
-        bestScores.push(info.bestScore);
-        
+        if (info.date > endDate) return;
         // Convert date to days since reference
         const daysSinceRef = (info.date - referenceDate) / (1000 * 60 * 60 * 24);
-        historicalPoints.push({ x: daysSinceRef, y: info.bestScore });
+        bestScorePoints.push({ x: daysSinceRef, y: info.bestScore });
     });
     
-    // Calculate all fits
+    // Calculate all fits using per-date cluster means
     const doublingTimeDays = data.projection.doublingTimeDays || 365;
+    const historicalPoints = Array.from(clusterMap.values())
+        .filter(point => point.date <= endDate)
+        .map(point => {
+        const daysSinceRef = (point.date - referenceDate) / (1000 * 60 * 60 * 24);
+        return { x: daysSinceRef, y: point.meanScore };
+    });
     const fits = {
         linear: linearFit(historicalPoints),
         exponential: exponentialFit(historicalPoints),
@@ -969,62 +1051,38 @@ function generateProjectionData(projection) {
     const latestDate = new Date(latestData.date);
     const latestDays = (latestDate - referenceDate) / (1000 * 60 * 60 * 24);
     
-    // Initialize projection arrays
-    const projections = {
-        linear: labels.map(() => null),
-        exponential: labels.map(() => null),
-        mooresLaw: labels.map(() => null),
-        logarithmic: labels.map(() => null),
-        polynomial: labels.map(() => null),
-        logistic: labels.map(() => null),
-        powerLaw: labels.map(() => null),
-        ridge: labels.map(() => null)
-    };
-    
-    // Set starting point for ALL projections to the actual current best score
-    // This ensures all projection lines start from the same point
-    const latestIndex = labels.indexOf(formatDateShort(latestDate));
-    const currentBestScore = latestData.bestScore;
-    
-    if (latestIndex !== -1) {
-        Object.keys(projections).forEach(key => {
-            projections[key][latestIndex] = currentBestScore;
-        });
+    // Build a dense timeline for smooth projection curves (limited to end of 2028)
+    const maxDay = Math.max(0, (endDate - referenceDate) / (1000 * 60 * 60 * 24));
+    const fitDays = [];
+    for (let day = 0; day <= maxDay; day += FIT_SAMPLE_DAYS) {
+        fitDays.push(day);
+    }
+    if (fitDays[fitDays.length - 1] !== maxDay) {
+        fitDays.push(maxDay);
     }
     
-    // Generate future projection points
-    const maxYears = 5;
-    let currentDate = new Date(latestDate);
-    const endDate = new Date(latestDate);
-    endDate.setFullYear(endDate.getFullYear() + maxYears);
-    
-    let isFirstFuturePoint = true;
-    
-    while (currentDate < endDate) {
-        currentDate = new Date(currentDate);
-        currentDate.setMonth(currentDate.getMonth() + 3); // Quarterly points
-        
-        const daysSinceRef = (currentDate - referenceDate) / (1000 * 60 * 60 * 24);
-        const dateLabel = formatDateShort(currentDate);
-        
-        labels.push(dateLabel);
-        bestScores.push(null);
-        
-        // Calculate each projection, applying offset to ensure continuity from current score
-        Object.keys(fits).forEach(key => {
-            const rawScore = fits[key].predict(daysSinceRef);
-            const rawScoreAtLatest = fits[key].predict(latestDays);
-            
-            // Apply offset so projection starts from actual current score
-            const offset = currentBestScore - rawScoreAtLatest;
-            let score = rawScore + offset;
-            
-            score = Math.max(0, Math.min(115, score)); // Clamp to 0-115 (allow overshoot)
-            projections[key].push(score);
-        });
-        
-        isFirstFuturePoint = false;
-    }
+    // Initialize projections across full timeline
+    const projections = {};
+    Object.keys(fits).forEach(key => {
+        const series = [];
+        for (const days of fitDays) {
+            const raw = fits[key].predict(days);
+            if (!Number.isFinite(raw)) {
+                continue;
+            }
+            if (raw >= TRENDLINE_STOP_AT) {
+                break;
+            }
+            if (raw < 0) {
+                continue;
+            }
+            series.push({
+                x: days,
+                y: raw
+            });
+        }
+        projections[key] = series;
+    });
     
     // Calculate predicted dates to 100%
     const predictions = {};
@@ -1040,8 +1098,10 @@ function generateProjectionData(projection) {
     });
     
     return { 
-        labels, 
-        bestScores, 
+        referenceDate,
+        endDate,
+        maxDays: maxDay,
+        bestScorePoints, 
         projections,
         predictions,
         fits,
