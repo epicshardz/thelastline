@@ -1057,19 +1057,32 @@ function generateProjectionData(projection) {
     const sortedDates = Array.from(dateMap.entries())
         .sort((a, b) => a[1].date - b[1].date);
     
-    // Build best-score points
+    // Build best-score points from historicalBestScores (only true milestones)
     const bestScorePoints = [];
     const endDate = new Date(PROJECTION_END_YEAR, PROJECTION_END_MONTH, 31); // May 31, 2028
     
     // Reference date for calculating days
     const referenceDate = sortedDates[0][1].date;
     
-    sortedDates.forEach(([dateStr, info]) => {
-        if (info.date > endDate) return;
-        // Convert date to days since reference
-        const daysSinceRef = (info.date - referenceDate) / (1000 * 60 * 60 * 24);
-        bestScorePoints.push({ x: daysSinceRef, y: info.bestScore });
-    });
+    // Use historicalBestScores for the main line - these are the TRUE record-breaking moments
+    if (data.historicalBestScores) {
+        let previousBest = 0;
+        data.historicalBestScores.forEach((milestone) => {
+            const entryDate = new Date(milestone.date);
+            if (entryDate > endDate) return;
+            // Only add points where score actually increased
+            if (milestone.score > previousBest) {
+                const daysSinceRef = (entryDate - referenceDate) / (1000 * 60 * 60 * 24);
+                bestScorePoints.push({ 
+                    x: daysSinceRef, 
+                    y: milestone.score,
+                    model: milestone.model,
+                    provider: milestone.provider
+                });
+                previousBest = milestone.score;
+            }
+        });
+    }
     
     // Calculate all fits using per-date cluster means
     const doublingTimeDays = data.projection.doublingTimeDays || 365;
