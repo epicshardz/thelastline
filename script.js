@@ -9,13 +9,14 @@ let scoreChart = null;
 let projectionChart = null;
 let countdownInterval = null;
 let targetDate = null;
-let currentFit = 'powerLaw'; // Default fit for countdown: mooresLaw, polynomial, exponential, linear, etc.
+let currentFit = 'polynomial'; // Default fit for countdown: mooresLaw, polynomial, exponential, linear, etc.
 let allFits = null; // Store all calculated fits
 let referenceDate = null; // Reference date for calculations
 const CLUSTER_MIN_POINTS = 6; // Minimum points to attempt clustering
 const CLUSTER_KMEANS_ITERS = 10; // Simple 1D k-means iterations
 const FIT_SAMPLE_DAYS = 7; // Denser sampling for smooth non-linear curves
 const PROJECTION_END_YEAR = 2028;
+const PROJECTION_END_MONTH = 4; // May (0-indexed, so 4 = May)
 const TRENDLINE_STOP_AT = 115; // Stop drawing when lines hit the top of the chart
 const SCATTER_TOP_PER_DATE = 5; // Reduce clutter: only show top N models per date
 
@@ -350,6 +351,7 @@ function initializeCharts() {
 // Initialize the horizontal bar chart for model scores
 function initializeScoreChart() {
     const ctx = document.getElementById('scoreChart').getContext('2d');
+    const canvas = document.getElementById('scoreChart');
     const latestData = data.scores[data.scores.length - 1];
     
     // Sort models by score descending
@@ -393,10 +395,22 @@ function initializeScoreChart() {
                         family: 'VT323',
                         size: 14
                     },
+                    footerFont: {
+                        family: 'VT323',
+                        size: 12
+                    },
+                    footerColor: '#00ccff',
                     callbacks: {
                         label: function(context) {
                             const model = sortedModels[context.dataIndex];
                             return `${model.score}% (${model.provider})`;
+                        },
+                        footer: function(context) {
+                            const model = sortedModels[context[0].dataIndex];
+                            if (model.source) {
+                                return '🔗 Click to open source';
+                            }
+                            return '';
                         }
                     }
                 }
@@ -429,9 +443,22 @@ function initializeScoreChart() {
                         font: {
                             family: 'VT323',
                             size: 14
-                        }
+                        },
+                        autoSkip: false
                     }
                 }
+            },
+            onClick: function(event, elements) {
+                if (elements.length > 0) {
+                    const index = elements[0].index;
+                    const model = sortedModels[index];
+                    if (model.source) {
+                        window.open(model.source, '_blank');
+                    }
+                }
+            },
+            onHover: function(event, elements) {
+                canvas.style.cursor = elements.length > 0 && sortedModels[elements[0].index].source ? 'pointer' : 'default';
             }
         }
     });
@@ -700,24 +727,33 @@ function createHistoricalModelDatasets(dataPoints) {
     const points = [];
     const pointColors = [];
     
+    // Track which model+score combinations we've already added
+    const seenModelScores = new Set();
+    
     // Sort score entries by date (earliest first)
     const sortedScores = [...data.scores].sort((a, b) => 
         new Date(a.date) - new Date(b.date)
     );
     
-    // Add top N model points per date
+    // Add model points - only first appearance of each model+score
     sortedScores.forEach((scoreEntry) => {
         const entryDate = new Date(scoreEntry.date);
         if (entryDate > endDate) return;
         const daysSinceRef = (entryDate - referenceDate) / (1000 * 60 * 60 * 24);
         
-        const topModels = [...scoreEntry.models]
-            .sort((a, b) => b.score - a.score)
-            .slice(0, SCATTER_TOP_PER_DATE);
+        // Sort models by score descending
+        const sortedModels = [...scoreEntry.models].sort((a, b) => b.score - a.score);
         
-        topModels.forEach((model) => {
-            points.push({ x: daysSinceRef, y: model.score, model: model.name, provider: model.provider });
-            pointColors.push(getProviderColor(model.provider));
+        sortedModels.forEach((model) => {
+            // Create unique key for model+score combination
+            const key = `${model.name}|${model.score}`;
+            
+            // Only add if we haven't seen this model+score before
+            if (!seenModelScores.has(key)) {
+                seenModelScores.add(key);
+                points.push({ x: daysSinceRef, y: model.score, model: model.name, provider: model.provider });
+                pointColors.push(getProviderColor(model.provider));
+            }
         });
     });
     
@@ -728,9 +764,17 @@ function createHistoricalModelDatasets(dataPoints) {
             if (datesWithModels.has(milestone.date)) return;
             const entryDate = new Date(milestone.date);
             if (entryDate > endDate) return;
-            const daysSinceRef = (entryDate - referenceDate) / (1000 * 60 * 60 * 24);
-            points.push({ x: daysSinceRef, y: milestone.score, model: milestone.model, provider: milestone.provider });
-            pointColors.push(getProviderColor(milestone.provider));
+            
+            // Create unique key for model+score combination
+            const key = `${milestone.model}|${milestone.score}`;
+            
+            // Only add if we haven't seen this model+score before
+            if (!seenModelScores.has(key)) {
+                seenModelScores.add(key);
+                const daysSinceRef = (entryDate - referenceDate) / (1000 * 60 * 60 * 24);
+                points.push({ x: daysSinceRef, y: milestone.score, model: milestone.model, provider: milestone.provider });
+                pointColors.push(getProviderColor(milestone.provider));
+            }
         });
     }
     
@@ -1015,7 +1059,7 @@ function generateProjectionData(projection) {
     
     // Build best-score points
     const bestScorePoints = [];
-    const endDate = new Date(PROJECTION_END_YEAR, 11, 31);
+    const endDate = new Date(PROJECTION_END_YEAR, PROJECTION_END_MONTH, 31); // May 31, 2028
     
     // Reference date for calculating days
     const referenceDate = sortedDates[0][1].date;
