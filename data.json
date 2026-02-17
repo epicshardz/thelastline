@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-11",
+  "lastUpdated": "2026-02-17",
   "benchmarkInfo": {
     "name": "Humanity's Last Exam",
     "description": "A benchmark of 3,000 questions across academic disciplines from 500+ subject experts",
@@ -309,14 +309,14 @@
       "bestModel": "Claude Opus 4.6"
     },
     {
-      "date": "2026-02-12",
+      "date": "2026-02-17",
       "models": [
-        { "name": "GLM-5-Thinking w/Tools", "score": 50.4, "provider": "Zhipu", "source": "https://z.ai/blog/glm-5" },
-        { "name": "GLM-5-Thinking", "score": 30.5, "provider": "Zhipu", "source": "https://z.ai/blog/glm-5" },
         { "name": "Claude Opus 4.6", "score": 53.1, "provider": "Anthropic", "source": "https://llm-stats.com/benchmarks/hle" },
         { "name": "Sup AI", "score": 52.15, "provider": "Sup AI", "source": "https://sup.ai/research/hle-white-paper-jan-9-2026" },
         { "name": "Kimi K2-Thinking-0905", "score": 51.0, "provider": "Moonshot", "source": "https://huggingface.co/moonshotai/Kimi-K2-Thinking" },
+        { "name": "GLM-5-Thinking w/Tools", "score": 50.4, "provider": "Zhipu", "source": "https://z.ai/blog/glm-5" },
         { "name": "Kimi K2.5 (Thinking w/Tools)", "score": 50.2, "provider": "Moonshot", "source": "https://huggingface.co/moonshotai/Kimi-K2.5" },
+        { "name": "Claude Sonnet 4.6 (w/Tools)", "score": 49.0, "provider": "Anthropic", "source": "https://www.anthropic.com/news/claude-sonnet-4-6" },
         { "name": "Gemini 3 Pro (High Thinking w/Tools)", "score": 45.8, "provider": "Google", "source": "https://blog.google/products-and-platforms/products/gemini/gemini-3/" },
         { "name": "Grok 4 - Reasoning w/Tools", "score": 44.4, "provider": "xAI", "source": "https://x.ai/news/grok-4" },
         { "name": "claude-opus-4.5 (w/search)", "score": 43.2, "provider": "Anthropic", "source": "https://www.vellum.ai/blog/claude-opus-4-5-benchmarks" },
