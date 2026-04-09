@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-04-07",
+  "lastUpdated": "2026-04-08",
   "benchmarkInfo": {
     "name": "Humanity's Last Exam",
     "description": "A benchmark of 3,000 questions across academic disciplines from 500+ subject experts",
@@ -7,25 +7,95 @@
     "startDate": "2024-04-13"
   },
   "historicalBestScores": [
-    { "date": "2024-04-13", "score": 2.72, "model": "GPT-4o", "provider": "OpenAI" },
-    { "date": "2024-06-21", "score": 4.08, "model": "Claude 3.5 Sonnet", "provider": "Anthropic" },
-    { "date": "2024-08-12", "score": 7.96, "model": "o1", "provider": "OpenAI" },
-    { "date": "2024-12-05", "score": 8.12, "model": "o1 Pro", "provider": "OpenAI" },
-    { "date": "2025-01-21", "score": 39.0, "model": "ERNIE 5.0", "provider": "Baidu" },
-    { "date": "2025-04-03", "score": 44.4, "model": "Grok 4 - Reasoning w/Tools", "provider": "xAI" },
-    { "date": "2025-04-03", "score": 50.7, "model": "grok-4-heavy w/tools", "provider": "xAI" },
-    { "date": "2025-09-25", "score": 51.0, "model": "Kimi K2-Thinking-0905", "provider": "Moonshot" },
-    { "date": "2025-11-30", "score": 52.15, "model": "Sup AI", "provider": "Sup AI" },
-    { "date": "2026-02-05", "score": 53.1, "model": "Claude Opus 4.6", "provider": "Anthropic" },
-    { "date": "2026-02-12", "score": 53.4, "model": "Gemini 3 Deep Think (w/Tools)", "provider": "Google" },
-    { "date": "2026-03-05", "score": 58.7, "model": "GPT-5.4 Pro (w/Tools)", "provider": "OpenAI" },
-    { "date": "2026-04-07", "score": 64.7, "model": "Anthropics Mythos Preview w/Tools", "provider": "Anthropic" }
+    {
+      "date": "2024-04-13",
+      "score": 2.72,
+      "model": "GPT-4o",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2024-06-21",
+      "score": 4.08,
+      "model": "Claude 3.5 Sonnet",
+      "provider": "Anthropic"
+    },
+    {
+      "date": "2024-08-12",
+      "score": 7.96,
+      "model": "o1",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2024-12-05",
+      "score": 8.12,
+      "model": "o1 Pro",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2025-01-21",
+      "score": 39,
+      "model": "ERNIE 5.0",
+      "provider": "Baidu"
+    },
+    {
+      "date": "2025-04-03",
+      "score": 44.4,
+      "model": "Grok 4 - Reasoning w/Tools",
+      "provider": "xAI"
+    },
+    {
+      "date": "2025-04-03",
+      "score": 50.7,
+      "model": "grok-4-heavy w/tools",
+      "provider": "xAI"
+    },
+    {
+      "date": "2025-09-25",
+      "score": 51,
+      "model": "Kimi K2-Thinking-0905",
+      "provider": "Moonshot"
+    },
+    {
+      "date": "2025-11-30",
+      "score": 52.15,
+      "model": "Sup AI",
+      "provider": "Sup AI"
+    },
+    {
+      "date": "2026-02-05",
+      "score": 53.1,
+      "model": "Claude Opus 4.6",
+      "provider": "Anthropic"
+    },
+    {
+      "date": "2026-02-12",
+      "score": 53.4,
+      "model": "Gemini 3 Deep Think (w/Tools)",
+      "provider": "Google"
+    },
+    {
+      "date": "2026-03-05",
+      "score": 58.7,
+      "model": "GPT-5.4 Pro (w/Tools)",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2026-04-07",
+      "score": 64.7,
+      "model": "Anthropics Mythos Preview w/Tools",
+      "provider": "Anthropic"
+    }
   ],
   "scores": [
     {
       "date": "2024-04-13",
       "models": [
-        { "name": "GPT-4o", "score": 2.72, "provider": "OpenAI", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "GPT-4o",
+          "score": 2.72,
+          "provider": "OpenAI",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
       "bestScore": 2.72,
       "bestModel": "GPT-4o"
@@ -33,7 +103,12 @@
     {
       "date": "2024-06-21",
       "models": [
-        { "name": "Claude 3.5 Sonnet", "score": 4.08, "provider": "Anthropic", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "Claude 3.5 Sonnet",
+          "score": 4.08,
+          "provider": "Anthropic",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
       "bestScore": 4.08,
       "bestModel": "Claude 3.5 Sonnet"
@@ -41,7 +116,12 @@
     {
       "date": "2024-08-12",
       "models": [
-        { "name": "o1", "score": 7.96, "provider": "OpenAI", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "o1",
+          "score": 7.96,
+          "provider": "OpenAI",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
       "bestScore": 7.96,
       "bestModel": "o1"
@@ -49,7 +129,12 @@
     {
       "date": "2024-09-24",
       "models": [
-        { "name": "Gemini-1.5-Pro-002", "score": 4.6, "provider": "Google", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "Gemini-1.5-Pro-002",
+          "score": 4.6,
+          "provider": "Google",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
       "bestScore": 7.96,
       "bestModel": "o1"
@@ -57,8 +142,18 @@
     {
       "date": "2024-12-03",
       "models": [
-        { "name": "Nova Pro", "score": 4.4, "provider": "Amazon", "source": "https://scale.com/leaderboard/humanitys_last_exam" },
-        { "name": "Nova Lite", "score": 3.64, "provider": "Amazon", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "Nova Pro",
+          "score": 4.4,
+          "provider": "Amazon",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        },
+        {
+          "name": "Nova Lite",
+          "score": 3.64,
+          "provider": "Amazon",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
       "bestScore": 7.96,
       "bestModel": "o1"
@@ -66,7 +161,12 @@
     {
       "date": "2024-12-05",
       "models": [
-        { "name": "o1 Pro", "score": 8.12, "provider": "OpenAI", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "o1 Pro",
+          "score": 8.12,
+          "provider": "OpenAI",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
       "bestScore": 8.12,
       "bestModel": "o1 Pro"
@@ -74,7 +174,12 @@
     {
       "date": "2024-12-19",
       "models": [
-        { "name": "Gemini 2.0 Flash Thinking", "score": 6.56, "provider": "Google", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "Gemini 2.0 Flash Thinking",
+          "score": 6.56,
+          "provider": "Google",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
       "bestScore": 8.12,
       "bestModel": "o1 Pro"
@@ -82,48 +187,83 @@
     {
       "date": "2025-01-21",
       "models": [
-        { "name": "ERNIE 5.0", "score": 39.0, "provider": "Baidu", "source": "https://llm-stats.com/benchmarks/hle" }
+        {
+          "name": "ERNIE 5.0",
+          "score": 39,
+          "provider": "Baidu",
+          "source": "https://llm-stats.com/benchmarks/hle"
+        }
       ],
-      "bestScore": 39.0,
+      "bestScore": 39,
       "bestModel": "ERNIE 5.0"
     },
     {
       "date": "2025-02-24",
       "models": [
-        { "name": "Claude 3.7 Sonnet (Thinking)", "score": 8.04, "provider": "Anthropic", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "Claude 3.7 Sonnet (Thinking)",
+          "score": 8.04,
+          "provider": "Anthropic",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
-      "bestScore": 39.0,
+      "bestScore": 39,
       "bestModel": "ERNIE 5.0"
     },
     {
       "date": "2025-02-27",
       "models": [
-        { "name": "GPT 4.5 Preview", "score": 5.44, "provider": "OpenAI", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "GPT 4.5 Preview",
+          "score": 5.44,
+          "provider": "OpenAI",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
-      "bestScore": 39.0,
+      "bestScore": 39,
       "bestModel": "ERNIE 5.0"
     },
     {
       "date": "2025-03-06",
       "models": [
-        { "name": "Gemini 2.5 Pro Preview", "score": 17.8, "provider": "Google", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "Gemini 2.5 Pro Preview",
+          "score": 17.8,
+          "provider": "Google",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
-      "bestScore": 39.0,
+      "bestScore": 39,
       "bestModel": "ERNIE 5.0"
     },
     {
       "date": "2025-03-25",
       "models": [
-        { "name": "Gemini 2.5 Pro Experimental", "score": 18.16, "provider": "Google", "source": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-model-thinking-updates-march-2025/" }
+        {
+          "name": "Gemini 2.5 Pro Experimental",
+          "score": 18.16,
+          "provider": "Google",
+          "source": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-model-thinking-updates-march-2025/"
+        }
       ],
-      "bestScore": 39.0,
+      "bestScore": 39,
       "bestModel": "ERNIE 5.0"
     },
     {
       "date": "2025-04-03",
       "models": [
-        { "name": "Grok 4 - Reasoning w/Tools", "score": 44.4, "provider": "xAI", "source": "https://x.ai/news/grok-4" },
-        { "name": "grok-4-heavy w/tools", "score": 50.7, "provider": "xAI", "source": "https://x.ai/news/grok-4" }
+        {
+          "name": "Grok 4 - Reasoning w/Tools",
+          "score": 44.4,
+          "provider": "xAI",
+          "source": "https://x.ai/news/grok-4"
+        },
+        {
+          "name": "grok-4-heavy w/tools",
+          "score": 50.7,
+          "provider": "xAI",
+          "source": "https://x.ai/news/grok-4"
+        }
       ],
       "bestScore": 50.7,
       "bestModel": "grok-4-heavy w/tools"
@@ -131,7 +271,12 @@
     {
       "date": "2025-04-07",
       "models": [
-        { "name": "Mistral Medium 3", "score": 4.52, "provider": "Mistral", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "Mistral Medium 3",
+          "score": 4.52,
+          "provider": "Mistral",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
       "bestScore": 50.7,
       "bestModel": "grok-4-heavy w/tools"
@@ -139,7 +284,12 @@
     {
       "date": "2025-04-14",
       "models": [
-        { "name": "GPT-4.1", "score": 5.4, "provider": "OpenAI", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "GPT-4.1",
+          "score": 5.4,
+          "provider": "OpenAI",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
       "bestScore": 50.7,
       "bestModel": "grok-4-heavy w/tools"
@@ -147,7 +297,12 @@
     {
       "date": "2025-04-17",
       "models": [
-        { "name": "Gemini 2.5 Flash", "score": 10.96, "provider": "Google", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "Gemini 2.5 Flash",
+          "score": 10.96,
+          "provider": "Google",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
       "bestScore": 50.7,
       "bestModel": "grok-4-heavy w/tools"
@@ -155,9 +310,24 @@
     {
       "date": "2025-04-22",
       "models": [
-        { "name": "Claude Sonnet 4 (Thinking)", "score": 7.76, "provider": "Anthropic", "source": "https://scale.com/leaderboard/humanitys_last_exam" },
-        { "name": "Claude Opus 4", "score": 6.68, "provider": "Anthropic", "source": "https://scale.com/leaderboard/humanitys_last_exam" },
-        { "name": "Claude Sonnet 4", "score": 5.52, "provider": "Anthropic", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "Claude Sonnet 4 (Thinking)",
+          "score": 7.76,
+          "provider": "Anthropic",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        },
+        {
+          "name": "Claude Opus 4",
+          "score": 6.68,
+          "provider": "Anthropic",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        },
+        {
+          "name": "Claude Sonnet 4",
+          "score": 5.52,
+          "provider": "Anthropic",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
       "bestScore": 50.7,
       "bestModel": "grok-4-heavy w/tools"
@@ -165,7 +335,12 @@
     {
       "date": "2025-04-29",
       "models": [
-        { "name": "Llama 4 Maverick", "score": 5.68, "provider": "Meta", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "Llama 4 Maverick",
+          "score": 5.68,
+          "provider": "Meta",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
       "bestScore": 50.7,
       "bestModel": "grok-4-heavy w/tools"
@@ -173,7 +348,12 @@
     {
       "date": "2025-05-27",
       "models": [
-        { "name": "Claude Opus 4 (Thinking)", "score": 10.72, "provider": "Anthropic", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "Claude Opus 4 (Thinking)",
+          "score": 10.72,
+          "provider": "Anthropic",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
       "bestScore": 50.7,
       "bestModel": "grok-4-heavy w/tools"
@@ -181,8 +361,18 @@
     {
       "date": "2025-07-28",
       "models": [
-        { "name": "GLM 4.5", "score": 14.4, "provider": "Zhipu", "source": "https://z.ai/blog/glm-4.5" },
-        { "name": "GLM 4.5-air", "score": 10.6, "provider": "Zhipu", "source": "https://z.ai/blog/glm-4.5" }
+        {
+          "name": "GLM 4.5",
+          "score": 14.4,
+          "provider": "Zhipu",
+          "source": "https://z.ai/blog/glm-4.5"
+        },
+        {
+          "name": "GLM 4.5-air",
+          "score": 10.6,
+          "provider": "Zhipu",
+          "source": "https://z.ai/blog/glm-4.5"
+        }
       ],
       "bestScore": 50.7,
       "bestModel": "grok-4-heavy w/tools"
@@ -190,7 +380,12 @@
     {
       "date": "2025-08-07",
       "models": [
-        { "name": "gpt-5-mini-2025-08-07", "score": 19.44, "provider": "OpenAI", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "gpt-5-mini-2025-08-07",
+          "score": 19.44,
+          "provider": "OpenAI",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
       "bestScore": 50.7,
       "bestModel": "grok-4-heavy w/tools"
@@ -198,10 +393,30 @@
     {
       "date": "2025-08-16",
       "models": [
-        { "name": "o3 (high) (w/search+tools)", "score": 24.9, "provider": "OpenAI", "source": "https://openai.com/index/introducing-o3-and-o4-mini/" },
-        { "name": "o3 (medium)", "score": 19.2, "provider": "OpenAI", "source": "https://openai.com/index/introducing-o3-and-o4-mini/" },
-        { "name": "o4-mini (high)", "score": 18.08, "provider": "OpenAI", "source": "https://openai.com/index/introducing-o3-and-o4-mini/" },
-        { "name": "o4-mini (medium)", "score": 14.28, "provider": "OpenAI", "source": "https://openai.com/index/introducing-o3-and-o4-mini/" }
+        {
+          "name": "o3 (high) (w/search+tools)",
+          "score": 24.9,
+          "provider": "OpenAI",
+          "source": "https://openai.com/index/introducing-o3-and-o4-mini/"
+        },
+        {
+          "name": "o3 (medium)",
+          "score": 19.2,
+          "provider": "OpenAI",
+          "source": "https://openai.com/index/introducing-o3-and-o4-mini/"
+        },
+        {
+          "name": "o4-mini (high)",
+          "score": 18.08,
+          "provider": "OpenAI",
+          "source": "https://openai.com/index/introducing-o3-and-o4-mini/"
+        },
+        {
+          "name": "o4-mini (medium)",
+          "score": 14.28,
+          "provider": "OpenAI",
+          "source": "https://openai.com/index/introducing-o3-and-o4-mini/"
+        }
       ],
       "bestScore": 50.7,
       "bestModel": "grok-4-heavy w/tools"
@@ -209,7 +424,12 @@
     {
       "date": "2025-09-08",
       "models": [
-        { "name": "MiniMax M2.1", "score": 22.0, "provider": "MiniMax", "source": "https://llm-stats.com/benchmarks/hle" }
+        {
+          "name": "MiniMax M2.1",
+          "score": 22,
+          "provider": "MiniMax",
+          "source": "https://llm-stats.com/benchmarks/hle"
+        }
       ],
       "bestScore": 50.7,
       "bestModel": "grok-4-heavy w/tools"
@@ -217,49 +437,89 @@
     {
       "date": "2025-09-25",
       "models": [
-        { "name": "Kimi K2-Thinking-0905", "score": 51.0, "provider": "Moonshot", "source": "https://huggingface.co/moonshotai/Kimi-K2-Thinking" }
+        {
+          "name": "Kimi K2-Thinking-0905",
+          "score": 51,
+          "provider": "Moonshot",
+          "source": "https://huggingface.co/moonshotai/Kimi-K2-Thinking"
+        }
       ],
-      "bestScore": 51.0,
+      "bestScore": 51,
       "bestModel": "Kimi K2-Thinking-0905"
     },
     {
       "date": "2025-10-06",
       "models": [
-        { "name": "gpt-5-pro", "score": 36.6, "provider": "OpenAI", "source": "https://llm-stats.com/benchmarks/hle" }
+        {
+          "name": "gpt-5-pro",
+          "score": 36.6,
+          "provider": "OpenAI",
+          "source": "https://llm-stats.com/benchmarks/hle"
+        }
       ],
-      "bestScore": 51.0,
+      "bestScore": 51,
       "bestModel": "Kimi K2-Thinking-0905"
     },
     {
       "date": "2025-11-12",
       "models": [
-        { "name": "gpt-5.1-thinking", "score": 23.68, "provider": "OpenAI", "source": "https://scale.com/leaderboard/humanitys_last_exam" },
-        { "name": "gpt-5.1-instant", "score": 6.8, "provider": "OpenAI", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "gpt-5.1-thinking",
+          "score": 23.68,
+          "provider": "OpenAI",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        },
+        {
+          "name": "gpt-5.1-instant",
+          "score": 6.8,
+          "provider": "OpenAI",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
-      "bestScore": 51.0,
+      "bestScore": 51,
       "bestModel": "Kimi K2-Thinking-0905"
     },
     {
       "date": "2025-11-18",
       "models": [
-        { "name": "Gemini 3 Pro (High Thinking w/Tools)", "score": 45.8, "provider": "Google", "source": "https://blog.google/products-and-platforms/products/gemini/gemini-3/" }
+        {
+          "name": "Gemini 3 Pro (High Thinking w/Tools)",
+          "score": 45.8,
+          "provider": "Google",
+          "source": "https://blog.google/products-and-platforms/products/gemini/gemini-3/"
+        }
       ],
-      "bestScore": 51.0,
+      "bestScore": 51,
       "bestModel": "Kimi K2-Thinking-0905"
     },
     {
       "date": "2025-11-24",
       "models": [
-        { "name": "claude-opus-4.5 (w/search)", "score": 43.2, "provider": "Anthropic", "source": "https://www.vellum.ai/blog/claude-opus-4-5-benchmarks" },
-        { "name": "claude-opus-4-5-20251101", "score": 14.16, "provider": "Anthropic", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "claude-opus-4.5 (w/search)",
+          "score": 43.2,
+          "provider": "Anthropic",
+          "source": "https://www.vellum.ai/blog/claude-opus-4-5-benchmarks"
+        },
+        {
+          "name": "claude-opus-4-5-20251101",
+          "score": 14.16,
+          "provider": "Anthropic",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
-      "bestScore": 51.0,
+      "bestScore": 51,
       "bestModel": "Kimi K2-Thinking-0905"
     },
     {
       "date": "2025-11-30",
       "models": [
-        { "name": "Sup AI", "score": 52.15, "provider": "Sup AI", "source": "https://sup.ai/research/hle-white-paper-jan-9-2026" }
+        {
+          "name": "Sup AI",
+          "score": 52.15,
+          "provider": "Sup AI",
+          "source": "https://sup.ai/research/hle-white-paper-jan-9-2026"
+        }
       ],
       "bestScore": 52.15,
       "bestModel": "Sup AI"
@@ -267,8 +527,18 @@
     {
       "date": "2025-12-01",
       "models": [
-        { "name": "DeepSeek-V3.2-Speciale", "score": 30.6, "provider": "DeepSeek", "source": "https://llm-stats.com/benchmarks/hle" },
-        { "name": "DeepSeek Reasoner", "score": 25.1, "provider": "DeepSeek", "source": "https://llm-stats.com/benchmarks/hle" }
+        {
+          "name": "DeepSeek-V3.2-Speciale",
+          "score": 30.6,
+          "provider": "DeepSeek",
+          "source": "https://llm-stats.com/benchmarks/hle"
+        },
+        {
+          "name": "DeepSeek Reasoner",
+          "score": 25.1,
+          "provider": "DeepSeek",
+          "source": "https://llm-stats.com/benchmarks/hle"
+        }
       ],
       "bestScore": 52.15,
       "bestModel": "Sup AI"
@@ -276,7 +546,12 @@
     {
       "date": "2025-12-10",
       "models": [
-        { "name": "Zoom Federated AI", "score": 48.1, "provider": "Zoom", "source": "https://www.zoom.com/en/blog/humanitys-last-exam-zoom-ai-breakthrough/" }
+        {
+          "name": "Zoom Federated AI",
+          "score": 48.1,
+          "provider": "Zoom",
+          "source": "https://www.zoom.com/en/blog/humanitys-last-exam-zoom-ai-breakthrough/"
+        }
       ],
       "bestScore": 52.15,
       "bestModel": "Sup AI"
@@ -284,7 +559,12 @@
     {
       "date": "2025-12-11",
       "models": [
-        { "name": "gpt-5.2", "score": 34.5, "provider": "OpenAI", "source": "https://llm-stats.com/benchmarks/hle" }
+        {
+          "name": "gpt-5.2",
+          "score": 34.5,
+          "provider": "OpenAI",
+          "source": "https://llm-stats.com/benchmarks/hle"
+        }
       ],
       "bestScore": 52.15,
       "bestModel": "Sup AI"
@@ -292,7 +572,12 @@
     {
       "date": "2025-12-15",
       "models": [
-        { "name": "Nemotron 3 Nano 30B", "score": 15.5, "provider": "NVIDIA", "source": "https://scale.com/leaderboard/humanitys_last_exam" }
+        {
+          "name": "Nemotron 3 Nano 30B",
+          "score": 15.5,
+          "provider": "NVIDIA",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        }
       ],
       "bestScore": 52.15,
       "bestModel": "Sup AI"
@@ -300,7 +585,12 @@
     {
       "date": "2025-12-22",
       "models": [
-        { "name": "GLM-4.7", "score": 42.8, "provider": "Zhipu", "source": "https://z.ai/blog/glm-4.7" }
+        {
+          "name": "GLM-4.7",
+          "score": 42.8,
+          "provider": "Zhipu",
+          "source": "https://z.ai/blog/glm-4.7"
+        }
       ],
       "bestScore": 52.15,
       "bestModel": "Sup AI"
@@ -308,7 +598,12 @@
     {
       "date": "2026-01-26",
       "models": [
-        { "name": "Kimi K2.5 (Thinking w/Tools)", "score": 50.2, "provider": "Moonshot", "source": "https://huggingface.co/moonshotai/Kimi-K2.5" }
+        {
+          "name": "Kimi K2.5 (Thinking w/Tools)",
+          "score": 50.2,
+          "provider": "Moonshot",
+          "source": "https://huggingface.co/moonshotai/Kimi-K2.5"
+        }
       ],
       "bestScore": 52.15,
       "bestModel": "Sup AI"
@@ -316,8 +611,18 @@
     {
       "date": "2026-02-05",
       "models": [
-        { "name": "Claude Opus 4.6", "score": 53.1, "provider": "Anthropic", "source": "https://llm-stats.com/benchmarks/hle" },
-        { "name": "GPT-5.3 Codex", "score": 39.9, "provider": "OpenAI", "source": "https://artificialanalysis.ai/models/gpt-5-3-codex" }
+        {
+          "name": "Claude Opus 4.6",
+          "score": 53.1,
+          "provider": "Anthropic",
+          "source": "https://llm-stats.com/benchmarks/hle"
+        },
+        {
+          "name": "GPT-5.3 Codex",
+          "score": 39.9,
+          "provider": "OpenAI",
+          "source": "https://artificialanalysis.ai/models/gpt-5-3-codex"
+        }
       ],
       "bestScore": 53.1,
       "bestModel": "Claude Opus 4.6"
@@ -325,9 +630,24 @@
     {
       "date": "2026-02-12",
       "models": [
-        { "name": "Gemini 3 Deep Think (w/Tools)", "score": 53.4, "provider": "Google", "source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/" },
-        { "name": "Gemini 3 Deep Think", "score": 48.4, "provider": "Google", "source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/" },
-        { "name": "GLM-5-Thinking w/Tools", "score": 50.4, "provider": "Zhipu", "source": "https://z.ai/blog/glm-5" }
+        {
+          "name": "Gemini 3 Deep Think (w/Tools)",
+          "score": 53.4,
+          "provider": "Google",
+          "source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/"
+        },
+        {
+          "name": "Gemini 3 Deep Think",
+          "score": 48.4,
+          "provider": "Google",
+          "source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/"
+        },
+        {
+          "name": "GLM-5-Thinking w/Tools",
+          "score": 50.4,
+          "provider": "Zhipu",
+          "source": "https://z.ai/blog/glm-5"
+        }
       ],
       "bestScore": 53.4,
       "bestModel": "Gemini 3 Deep Think (w/Tools)"
@@ -335,7 +655,12 @@
     {
       "date": "2026-02-17",
       "models": [
-        { "name": "Claude Sonnet 4.6 (w/Tools)", "score": 49.0, "provider": "Anthropic", "source": "https://www.anthropic.com/news/claude-sonnet-4-6" }
+        {
+          "name": "Claude Sonnet 4.6 (w/Tools)",
+          "score": 49,
+          "provider": "Anthropic",
+          "source": "https://www.anthropic.com/news/claude-sonnet-4-6"
+        }
       ],
       "bestScore": 53.4,
       "bestModel": "Gemini 3 Deep Think (w/Tools)"
@@ -343,8 +668,18 @@
     {
       "date": "2026-02-19",
       "models": [
-        { "name": "Gemini 3.1 Pro (w/Tools)", "score": 51.4, "provider": "Google", "source": "https://deepmind.google/models/model-cards/gemini-3-1-pro/#:~:text=Humanity%27s%20Last%20Exam" },
-        { "name": "Gemini 3.1 Pro", "score": 44.4, "provider": "Google", "source": "https://deepmind.google/models/model-cards/gemini-3-1-pro/#:~:text=Humanity%27s%20Last%20Exam" }
+        {
+          "name": "Gemini 3.1 Pro (w/Tools)",
+          "score": 51.4,
+          "provider": "Google",
+          "source": "https://deepmind.google/models/model-cards/gemini-3-1-pro/#:~:text=Humanity%27s%20Last%20Exam"
+        },
+        {
+          "name": "Gemini 3.1 Pro",
+          "score": 44.4,
+          "provider": "Google",
+          "source": "https://deepmind.google/models/model-cards/gemini-3-1-pro/#:~:text=Humanity%27s%20Last%20Exam"
+        }
       ],
       "bestScore": 53.4,
       "bestModel": "Gemini 3 Deep Think (w/Tools)"
@@ -352,10 +687,30 @@
     {
       "date": "2026-03-05",
       "models": [
-        { "name": "GPT-5.4 Pro (w/Tools)", "score": 58.7, "provider": "OpenAI", "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94" },
-        { "name": "GPT-5.4 (w/Tools)", "score": 52.1, "provider": "OpenAI", "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94" },
-        { "name": "GPT-5.4 Pro", "score": 42.7, "provider": "OpenAI", "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94" },
-        { "name": "GPT-5.4", "score": 39.8, "provider": "OpenAI", "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94" }
+        {
+          "name": "GPT-5.4 Pro (w/Tools)",
+          "score": 58.7,
+          "provider": "OpenAI",
+          "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94"
+        },
+        {
+          "name": "GPT-5.4 (w/Tools)",
+          "score": 52.1,
+          "provider": "OpenAI",
+          "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94"
+        },
+        {
+          "name": "GPT-5.4 Pro",
+          "score": 42.7,
+          "provider": "OpenAI",
+          "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94"
+        },
+        {
+          "name": "GPT-5.4",
+          "score": 39.8,
+          "provider": "OpenAI",
+          "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94"
+        }
       ],
       "bestScore": 58.7,
       "bestModel": "GPT-5.4 Pro (w/Tools)"
@@ -363,7 +718,12 @@
     {
       "date": "2026-04-01",
       "models": [
-        { "name": "qwen3.6-Plus w/tools", "score": 43.4, "provider": "Qwen", "source": "https://qwen.ai/blog?id=qwen3.6" }
+        {
+          "name": "qwen3.6-Plus w/tools",
+          "score": 43.4,
+          "provider": "Qwen",
+          "source": "https://qwen.ai/blog?id=qwen3.6"
+        }
       ],
       "bestScore": 58.7,
       "bestModel": "GPT-5.4 Pro (w/Tools)"
@@ -371,49 +731,284 @@
     {
       "date": "2026-04-07",
       "models": [
-        { "name": "Anthropics Mythos Preview", "score": 56.8, "provider": "Anthropic", "source": "https://www.anthropic.com/glasswing" },
-        { "name": "Anthropics Mythos Preview w/Tools", "score": 64.7, "provider": "Anthropic", "source": "https://www.anthropic.com/glasswing" }
+        {
+          "name": "Anthropics Mythos Preview",
+          "score": 56.8,
+          "provider": "Anthropic",
+          "source": "https://www.anthropic.com/glasswing"
+        },
+        {
+          "name": "Anthropics Mythos Preview w/Tools",
+          "score": 64.7,
+          "provider": "Anthropic",
+          "source": "https://www.anthropic.com/glasswing"
+        }
       ],
       "bestScore": 64.7,
       "bestModel": "Anthropics Mythos Preview w/Tools"
     },
     {
-      "date": "2026-04-07",
+      "date": "2026-04-08",
       "models": [
-        { "name": "Anthropics Mythos Preview w/Tools", "score": 64.7, "provider": "Anthropic", "source": "https://www.anthropic.com/glasswing" },
-        { "name": "GPT-5.4 Pro (w/Tools)", "score": 58.7, "provider": "OpenAI", "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94" },
-        { "name": "Anthropics Mythos Preview", "score": 56.8, "provider": "Anthropic", "source": "https://www.anthropic.com/glasswing" },
-        { "name": "Gemini 3 Deep Think (w/Tools)", "score": 53.4, "provider": "Google", "source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/" },
-        { "name": "Claude Opus 4.6", "score": 53.1, "provider": "Anthropic", "source": "https://llm-stats.com/benchmarks/hle" },
-        { "name": "GPT-5.4 (w/Tools)", "score": 52.1, "provider": "OpenAI", "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94" },
-        { "name": "Sup AI", "score": 52.15, "provider": "Sup AI", "source": "https://sup.ai/research/hle-white-paper-jan-9-2026" },
-        { "name": "Gemini 3.1 Pro (w/Tools)", "score": 51.4, "provider": "Google", "source": "https://deepmind.google/models/model-cards/gemini-3-1-pro/#:~:text=Humanity%27s%20Last%20Exam" },
-        { "name": "Kimi K2-Thinking-0905", "score": 51.0, "provider": "Moonshot", "source": "https://huggingface.co/moonshotai/Kimi-K2-Thinking" },
-        { "name": "grok-4-heavy w/tools", "score": 50.7, "provider": "xAI", "source": "https://x.ai/news/grok-4" },
-        { "name": "GLM-5-Thinking w/Tools", "score": 50.4, "provider": "Zhipu", "source": "https://z.ai/blog/glm-5" },
-        { "name": "Kimi K2.5 (Thinking w/Tools)", "score": 50.2, "provider": "Moonshot", "source": "https://huggingface.co/moonshotai/Kimi-K2.5" },
-        { "name": "Claude Sonnet 4.6 (w/Tools)", "score": 49.0, "provider": "Anthropic", "source": "https://www.anthropic.com/news/claude-sonnet-4-6" },
-        { "name": "Gemini 3 Deep Think", "score": 48.4, "provider": "Google", "source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/" },
-        { "name": "Zoom Federated AI", "score": 48.1, "provider": "Zoom", "source": "https://www.zoom.com/en/blog/humanitys-last-exam-zoom-ai-breakthrough/" },
-        { "name": "Gemini 3 Pro (High Thinking w/Tools)", "score": 45.8, "provider": "Google", "source": "https://blog.google/products-and-platforms/products/gemini/gemini-3/" },
-        { "name": "Gemini 3.1 Pro", "score": 44.4, "provider": "Google", "source": "https://deepmind.google/models/model-cards/gemini-3-1-pro/#:~:text=Humanity%27s%20Last%20Exam" },
-        { "name": "Grok 4 - Reasoning w/Tools", "score": 44.4, "provider": "xAI", "source": "https://x.ai/news/grok-4" },
-        { "name": "qwen3.6-Plus w/tools", "score": 43.4, "provider": "Qwen", "source": "https://qwen.ai/blog?id=qwen3.6" },
-        { "name": "claude-opus-4.5 (w/search)", "score": 43.2, "provider": "Anthropic", "source": "https://www.vellum.ai/blog/claude-opus-4-5-benchmarks" },
-        { "name": "GLM-4.7", "score": 42.8, "provider": "Zhipu", "source": "https://z.ai/blog/glm-4.7" },
-        { "name": "GPT-5.4 Pro", "score": 42.7, "provider": "OpenAI", "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94" },
-        { "name": "GPT-5.3 Codex", "score": 39.9, "provider": "OpenAI", "source": "https://artificialanalysis.ai/models/gpt-5-3-codex" },
-        { "name": "GPT-5.4", "score": 39.8, "provider": "OpenAI", "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94" },
-        { "name": "ERNIE 5.0", "score": 39.0, "provider": "Baidu", "source": "https://llm-stats.com/benchmarks/hle" },
-        { "name": "gpt-5-pro", "score": 36.6, "provider": "OpenAI", "source": "https://llm-stats.com/benchmarks/hle" },
-        { "name": "gpt-5.2", "score": 34.5, "provider": "OpenAI", "source": "https://llm-stats.com/benchmarks/hle" },
-        { "name": "DeepSeek-V3.2-Speciale", "score": 30.6, "provider": "DeepSeek", "source": "https://llm-stats.com/benchmarks/hle" },
-        { "name": "DeepSeek Reasoner", "score": 25.1, "provider": "DeepSeek", "source": "https://llm-stats.com/benchmarks/hle" },
-        { "name": "o3 (high) (w/search+tools)", "score": 24.9, "provider": "OpenAI", "source": "https://openai.com/index/introducing-o3-and-o4-mini/" },
-        { "name": "gpt-5.1-thinking", "score": 23.68, "provider": "OpenAI", "source": "https://scale.com/leaderboard/humanitys_last_exam" },
-        { "name": "MiniMax M2.1", "score": 22.0, "provider": "MiniMax", "source": "https://llm-stats.com/benchmarks/hle" },
-        { "name": "gpt-5-mini-2025-08-07", "score": 19.44, "provider": "OpenAI", "source": "https://scale.com/leaderboard/humanitys_last_exam" },
-        { "name": "o3 (medium)", "score": 19.2, "provider": "OpenAI", "source": "https://openai.com/index/introducing-o3-and-o4-mini/" }
+        {
+          "name": "Muse Spark (Contemplating w/Tools)",
+          "score": 58.4,
+          "provider": "Meta",
+          "source": "https://ai.meta.com/blog/introducing-muse-spark-msl/?utm_source=twitter&utm_medium=organic_social&utm_content=image&utm_campaign=spark"
+        },
+        {
+          "name": "Muse Spark (Thinking w/Tools)",
+          "score": 50.4,
+          "provider": "Meta",
+          "source": "https://ai.meta.com/blog/introducing-muse-spark-msl/?utm_source=twitter&utm_medium=organic_social&utm_content=image&utm_campaign=spark"
+        },
+        {
+          "name": "Muse Spark (Contemplating no/Tools)",
+          "score": 50.2,
+          "provider": "Meta",
+          "source": "https://ai.meta.com/blog/introducing-muse-spark-msl/?utm_source=twitter&utm_medium=organic_social&utm_content=image&utm_campaign=spark"
+        },
+        {
+          "name": "Muse Spark (Thinking no/Tools)",
+          "score": 42.8,
+          "provider": "Meta",
+          "source": "https://ai.meta.com/blog/introducing-muse-spark-msl/?utm_source=twitter&utm_medium=organic_social&utm_content=image&utm_campaign=spark"
+        }
+      ],
+      "bestScore": 64.7,
+      "bestModel": "Anthropics Mythos Preview w/Tools"
+    },
+    {
+      "date": "2026-04-08",
+      "models": [
+        {
+          "name": "Anthropics Mythos Preview w/Tools",
+          "score": 64.7,
+          "provider": "Anthropic",
+          "source": "https://www.anthropic.com/glasswing"
+        },
+        {
+          "name": "GPT-5.4 Pro (w/Tools)",
+          "score": 58.7,
+          "provider": "OpenAI",
+          "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94"
+        },
+        {
+          "name": "Muse Spark (Contemplating w/Tools)",
+          "score": 58.4,
+          "provider": "Meta",
+          "source": "https://ai.meta.com/blog/introducing-muse-spark-msl/?utm_source=twitter&utm_medium=organic_social&utm_content=image&utm_campaign=spark"
+        },
+        {
+          "name": "Anthropics Mythos Preview",
+          "score": 56.8,
+          "provider": "Anthropic",
+          "source": "https://www.anthropic.com/glasswing"
+        },
+        {
+          "name": "Gemini 3 Deep Think (w/Tools)",
+          "score": 53.4,
+          "provider": "Google",
+          "source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/"
+        },
+        {
+          "name": "Claude Opus 4.6",
+          "score": 53.1,
+          "provider": "Anthropic",
+          "source": "https://llm-stats.com/benchmarks/hle"
+        },
+        {
+          "name": "Sup AI",
+          "score": 52.15,
+          "provider": "Sup AI",
+          "source": "https://sup.ai/research/hle-white-paper-jan-9-2026"
+        },
+        {
+          "name": "GPT-5.4 (w/Tools)",
+          "score": 52.1,
+          "provider": "OpenAI",
+          "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94"
+        },
+        {
+          "name": "Gemini 3.1 Pro (w/Tools)",
+          "score": 51.4,
+          "provider": "Google",
+          "source": "https://deepmind.google/models/model-cards/gemini-3-1-pro/#:~:text=Humanity%27s%20Last%20Exam"
+        },
+        {
+          "name": "Kimi K2-Thinking-0905",
+          "score": 51,
+          "provider": "Moonshot",
+          "source": "https://huggingface.co/moonshotai/Kimi-K2-Thinking"
+        },
+        {
+          "name": "grok-4-heavy w/tools",
+          "score": 50.7,
+          "provider": "xAI",
+          "source": "https://x.ai/news/grok-4"
+        },
+        {
+          "name": "GLM-5-Thinking w/Tools",
+          "score": 50.4,
+          "provider": "Zhipu",
+          "source": "https://z.ai/blog/glm-5"
+        },
+        {
+          "name": "Muse Spark (Thinking w/Tools)",
+          "score": 50.4,
+          "provider": "Meta",
+          "source": "https://ai.meta.com/blog/introducing-muse-spark-msl/?utm_source=twitter&utm_medium=organic_social&utm_content=image&utm_campaign=spark"
+        },
+        {
+          "name": "Kimi K2.5 (Thinking w/Tools)",
+          "score": 50.2,
+          "provider": "Moonshot",
+          "source": "https://huggingface.co/moonshotai/Kimi-K2.5"
+        },
+        {
+          "name": "Muse Spark (Contemplating no/Tools)",
+          "score": 50.2,
+          "provider": "Meta",
+          "source": "https://ai.meta.com/blog/introducing-muse-spark-msl/?utm_source=twitter&utm_medium=organic_social&utm_content=image&utm_campaign=spark"
+        },
+        {
+          "name": "Claude Sonnet 4.6 (w/Tools)",
+          "score": 49,
+          "provider": "Anthropic",
+          "source": "https://www.anthropic.com/news/claude-sonnet-4-6"
+        },
+        {
+          "name": "Gemini 3 Deep Think",
+          "score": 48.4,
+          "provider": "Google",
+          "source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/"
+        },
+        {
+          "name": "Zoom Federated AI",
+          "score": 48.1,
+          "provider": "Zoom",
+          "source": "https://www.zoom.com/en/blog/humanitys-last-exam-zoom-ai-breakthrough/"
+        },
+        {
+          "name": "Gemini 3 Pro (High Thinking w/Tools)",
+          "score": 45.8,
+          "provider": "Google",
+          "source": "https://blog.google/products-and-platforms/products/gemini/gemini-3/"
+        },
+        {
+          "name": "Gemini 3.1 Pro",
+          "score": 44.4,
+          "provider": "Google",
+          "source": "https://deepmind.google/models/model-cards/gemini-3-1-pro/#:~:text=Humanity%27s%20Last%20Exam"
+        },
+        {
+          "name": "Grok 4 - Reasoning w/Tools",
+          "score": 44.4,
+          "provider": "xAI",
+          "source": "https://x.ai/news/grok-4"
+        },
+        {
+          "name": "qwen3.6-Plus w/tools",
+          "score": 43.4,
+          "provider": "Qwen",
+          "source": "https://qwen.ai/blog?id=qwen3.6"
+        },
+        {
+          "name": "claude-opus-4.5 (w/search)",
+          "score": 43.2,
+          "provider": "Anthropic",
+          "source": "https://www.vellum.ai/blog/claude-opus-4-5-benchmarks"
+        },
+        {
+          "name": "GLM-4.7",
+          "score": 42.8,
+          "provider": "Zhipu",
+          "source": "https://z.ai/blog/glm-4.7"
+        },
+        {
+          "name": "Muse Spark (Thinking no/Tools)",
+          "score": 42.8,
+          "provider": "Meta",
+          "source": "https://ai.meta.com/blog/introducing-muse-spark-msl/?utm_source=twitter&utm_medium=organic_social&utm_content=image&utm_campaign=spark"
+        },
+        {
+          "name": "GPT-5.4 Pro",
+          "score": 42.7,
+          "provider": "OpenAI",
+          "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94"
+        },
+        {
+          "name": "GPT-5.3 Codex",
+          "score": 39.9,
+          "provider": "OpenAI",
+          "source": "https://artificialanalysis.ai/models/gpt-5-3-codex"
+        },
+        {
+          "name": "GPT-5.4",
+          "score": 39.8,
+          "provider": "OpenAI",
+          "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94"
+        },
+        {
+          "name": "ERNIE 5.0",
+          "score": 39,
+          "provider": "Baidu",
+          "source": "https://llm-stats.com/benchmarks/hle"
+        },
+        {
+          "name": "gpt-5-pro",
+          "score": 36.6,
+          "provider": "OpenAI",
+          "source": "https://llm-stats.com/benchmarks/hle"
+        },
+        {
+          "name": "gpt-5.2",
+          "score": 34.5,
+          "provider": "OpenAI",
+          "source": "https://llm-stats.com/benchmarks/hle"
+        },
+        {
+          "name": "DeepSeek-V3.2-Speciale",
+          "score": 30.6,
+          "provider": "DeepSeek",
+          "source": "https://llm-stats.com/benchmarks/hle"
+        },
+        {
+          "name": "DeepSeek Reasoner",
+          "score": 25.1,
+          "provider": "DeepSeek",
+          "source": "https://llm-stats.com/benchmarks/hle"
+        },
+        {
+          "name": "o3 (high) (w/search+tools)",
+          "score": 24.9,
+          "provider": "OpenAI",
+          "source": "https://openai.com/index/introducing-o3-and-o4-mini/"
+        },
+        {
+          "name": "gpt-5.1-thinking",
+          "score": 23.68,
+          "provider": "OpenAI",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        },
+        {
+          "name": "MiniMax M2.1",
+          "score": 22,
+          "provider": "MiniMax",
+          "source": "https://llm-stats.com/benchmarks/hle"
+        },
+        {
+          "name": "gpt-5-mini-2025-08-07",
+          "score": 19.44,
+          "provider": "OpenAI",
+          "source": "https://scale.com/leaderboard/humanitys_last_exam"
+        },
+        {
+          "name": "o3 (medium)",
+          "score": 19.2,
+          "provider": "OpenAI",
+          "source": "https://openai.com/index/introducing-o3-and-o4-mini/"
+        }
       ],
       "bestScore": 64.7,
       "bestModel": "Anthropics Mythos Preview w/Tools"
