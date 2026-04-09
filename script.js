@@ -234,9 +234,26 @@ function updateStats() {
     document.getElementById('currentBest').textContent = `${bestModel.score.toFixed(1)}%`;
     document.getElementById('bestModel').textContent = bestModel.name;
     document.getElementById('remaining').textContent = `${(100 - bestModel.score).toFixed(1)}%`;
-    // Find the latest date
-    const latestModel = models.reduce((prev, current) => (new Date(prev.date) > new Date(current.date)) ? prev : current);
-    document.getElementById('lastUpdated').textContent = latestModel.date;
+    // Show last modified date of models.json as last updated
+    fetch('models.json', { method: 'HEAD' })
+        .then(response => {
+            const lastModified = response.headers.get('Last-Modified');
+            if (lastModified) {
+                // Format as yyyy-mm-dd
+                const date = new Date(lastModified);
+                const formatted = date.toISOString().slice(0, 10);
+                document.getElementById('lastUpdated').textContent = formatted;
+            } else {
+                // Fallback: use latest model date
+                const latestModel = models.reduce((prev, current) => (new Date(prev.date) > new Date(current.date)) ? prev : current);
+                document.getElementById('lastUpdated').textContent = latestModel.date;
+            }
+        })
+        .catch(() => {
+            // Fallback: use latest model date
+            const latestModel = models.reduce((prev, current) => (new Date(prev.date) > new Date(current.date)) ? prev : current);
+            document.getElementById('lastUpdated').textContent = latestModel.date;
+        });
 }
 
 // Get color based on provider
