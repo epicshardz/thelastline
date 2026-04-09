@@ -742,6 +742,18 @@
           "score": 64.7,
           "provider": "Anthropic",
           "source": "https://www.anthropic.com/glasswing"
+        },
+        {
+          "name": "GLM-5.1",
+          "score": 31.0,
+          "provider": "Zhipu",
+          "source": "https://z.ai/blog/glm-5.1#:~:text=REASONING-,HLE,-31.0"
+        },
+        {
+          "name": "GLM-5.1 w/Tools",
+          "score": 52.3,
+          "provider": "Zhipu",
+          "source": "https://z.ai/blog/glm-5.1#:~:text=REASONING-,HLE,-31.0"
         }
       ],
       "bestScore": 64.7,
