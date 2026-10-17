@@ -114,5 +114,11 @@
   { "name": "GPT-5.4 (w/Tools)", "score": 52.1, "provider": "OpenAI", "date": "2026-03-05", "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94" },
   { "name": "GPT-5.4 Pro", "score": 42.7, "provider": "OpenAI", "date": "2026-03-05", "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94" },
   { "name": "GPT-5.4", "score": 39.8, "provider": "OpenAI", "date": "2026-03-05", "source": "https://openai.com/index/introducing-gpt-5-4/#:~:text=52.1%25-,58.7%25,-%E2%80%94" },
-  { "name": "qwen3.6-Plus w/tools", "score": 43.4, "provider": "Qwen", "date": "2026-04-01", "source": "https://qwen.ai/blog?id=qwen3.6" }
+  { "name": "qwen3.6-Plus w/tools", "score": 43.4, "provider": "Qwen", "date": "2026-04-01", "source": "https://qwen.ai/blog?id=qwen3.6" },
+  { "name": "Claude Fable 5 w/Tools", "score": 36.8, "provider": "Anthropic", "date": "2026-07-09", "source": "https://www.anthropic.com/claude/mythos#:~:text=with%20its%20production-,safeguards,-enabled.%20On%20tasks" },
+  { "name": "Claude Opus 5 w/Tools", "score": 63.6, "provider": "Anthropic", "date": "2026-07-24", "source": "https://www.anthropic.com/claude-opus-5-5#:~:text=Multidisciplinary%20reasoning" },
+  { "name": "Claude Fable 5.1 w/Tools", "score": 65.6, "provider": "Anthropic", "date": "2026-09-01", "source": "https://www.anthropic.com/claude-opus-5-5#:~:text=Multidisciplinary%20reasoning" },
+  { "name": "Claude Opus 5.5 w/Tools", "score": 67.7, "provider": "Anthropic", "date": "2026-09-22", "source": "https://www.anthropic.com/claude-opus-5-5#:~:text=Multidisciplinary%20reasoning" },
+  { "name": "GPT-6 Astra w/Tools", "score": 57.2, "provider": "OpenAI", "date": "2026-09-29", "source": "https://www.anthropic.com/claude-opus-5-5#:~:text=Multidisciplinary%20reasoning" },
+  { "name": "Gemini 4 Argon", "score": 57.1, "provider": "Google", "date": "2026-09-30", "source": "https://artificialanalysis.ai/evaluations/humanitys-last-exam" }
 ]

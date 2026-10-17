@@ -239,10 +239,12 @@ function updateStats() {
         .then(response => {
             const lastModified = response.headers.get('Last-Modified');
             if (lastModified) {
-                // Format as yyyy-mm-dd
+                // Format as yyyy-mm-dd in local time
                 const date = new Date(lastModified);
-                const formatted = date.toISOString().slice(0, 10);
-                document.getElementById('lastUpdated').textContent = formatted;
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0');
+                const day = String(date.getDate()).padStart(2, '0');
+                document.getElementById('lastUpdated').textContent = `${year}-${month}-${day}`;
             } else {
                 // Fallback: use latest model date
                 const latestModel = models.reduce((prev, current) => (new Date(prev.date) > new Date(current.date)) ? prev : current);
